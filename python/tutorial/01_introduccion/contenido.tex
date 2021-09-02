@@ -5,7 +5,7 @@
     \tableofcontents
 \end{frame}
 
-\section{Python}
+\section{Introducción a Python}
 
 \begin{frame}[c]{¿Qué es Python?}
     \begin{columns}
@@ -15,7 +15,7 @@
         Se trata de un lenguaje de programación \textbf{multiparadigma}, ya
         que soporta parcialmente la \textit{orientación a objetos,
         programación imperativa} y, en menor medida, \textit{programación
-        funcional}.
+        funcional}. \\~\\
 
         Es un lenguaje interpretado, dinámico y multiplataforma. 
         \column{0.5\textwidth}
@@ -60,6 +60,15 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[c]{Ejecución de programas}
+  \begin{itemize}
+    \item El código generado en Lenguaje Python se almacena en un archivo con
+      extensión \textbf{.py}
+  \end{itemize}
+\end{frame}
+
+\section{Reglas de codificación}
+
 \begin{frame}[c]{Reglas de codificación}
   \begin{itemize}
     \item Los comentario de una línea inician con "\#"
@@ -76,14 +85,55 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Ejecución de programas}
+\begin{frame}[fragile]
+  \frametitle{Comentarios en Python}
+
+  Los comentarios pueden ser usados para
+
   \begin{itemize}
-    \item El código generado en Lenguaje Python se almacena en un archivo con
-      extensión .py
+    \item explicar el código de Python.
+    \item hacer el código mas legible.
+    \item prevenir la ejecución de código de pruebas.
   \end{itemize}
+
+  \begin{lstlisting}[language=Python]
+# Este es un comentario
+# y otro comentario
+print("Hola Mundo")
+
+print("Hola Mundo") # Este es un comentario
+
+# print("Hola Mundo")
+print("Hello, World!")
+
+"""
+Este es un comentario
+escrito en mas
+de una sola linea
+"""
+  \end{lstlisting}
 \end{frame}
 
-\section{Pycharm}
+\section{Variables}
+
+\begin{frame}[fragile]
+  \frametitle{Variables en Python}
+
+  Las variables son contenedores para almacenar valores de datos.
+
+  \begin{block}{Creando variables}
+    Python no tiene un comando para declarar una variable. \\~\\
+    Una variable es \textbf{creada} en el momento que se le asigna un
+    valor por primera vez.
+  \end{block}
+
+  \begin{lstlisting}[language=Python]
+x = 5
+y = "Juan"
+print(x)
+print(y)
+  \end{lstlisting}
+\end{frame}
 
 \begin{frame}[c]{Pantalla de inicio}
     \begin{center}
