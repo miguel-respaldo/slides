@@ -135,6 +135,62 @@ print(y)
   \end{lstlisting}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{"Casting" en Python}
+
+  Si se quiere especificar el tipo de dato de una variable, esto se puede hacer
+  haciendo "\textbf{casting}"
+
+  \begin{lstlisting}[language=Python]
+  x = str(3)   # x guarda '3'
+  y = int(3)   # y guarda 3
+  z = float(3) # z guarda 3.0
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Obteniendo el tipo de dato}
+
+  Se puede obtener el tipo de dato con la función \textbf{type()}
+
+  \begin{lstlisting}[language=Python]
+  x = str(3)   # x guarda '3'
+  y = int(3)   # y guarda 3
+  z = float(3) # z guarda 3.0
+
+  print( type(x) )
+  print( type(y) )
+  print( type(z) )
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Nombre de variables}
+
+  Las variables pueden tener un nombre corto (como \textit{x} y \textit{y})
+  o tener un nombre más \textbf{descriptivo} (\textit{edad}, \textit{nombre} 
+  \textit{volumen\_total}. Las reglas para las variables en Python son:
+
+  \begin{itemize}
+    \item El nombre de la variable tiene que comenzar con una \textbf{letra} o
+      un \textbf{guión bajo} (\_).
+    \item El nombre de una variable no puede iniciar con número.
+    \item El nombre de una variable solo puede contener caracteres
+      alfa-numéricos y guiones bajo (\textit{A-Z, a-z, 0-9 y \_})
+    \item Los nombre de las variables son sensibles a mayúsculas y minúsculas
+      (edad, Edad y EDAD son tres variables deferentes)
+  \end{itemize}
+
+  \begin{lstlisting}[language=Python]
+    myvar = "Juan"
+    my\_var = "Juan"
+    \_my\_var = "Juan"
+    myVar = "Juan"
+    MYVAR = "Juan"
+    myvar2 = "Juan"
+  \end{lstlisting}
+\end{frame}
+
 \begin{frame}[c]{Pantalla de inicio}
     \begin{center}
         Pantalla de inicio
