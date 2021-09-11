@@ -28,11 +28,12 @@
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codebakground}{rgb}{0.95,0.95,0.92}
 
 %Code listing style named "mystyle"
 \lstdefinestyle{mystyle}{
-  backgroundcolor=\color{backcolour},   commentstyle=\color{codegreen},
+  backgroundcolor=\color{codebakground},
+  commentstyle=\color{codegreen},
   keywordstyle=\color{magenta},
   numberstyle=\tiny\color{codegray},
   stringstyle=\color{codepurple},
@@ -51,6 +52,9 @@
 
 %"mystyle" code listing set
 \lstset{style=mystyle}
+
+\newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
+%\newcommand{\pausa}{}      % Para que NO salgan las pausas
 
 \begin{document}
 
