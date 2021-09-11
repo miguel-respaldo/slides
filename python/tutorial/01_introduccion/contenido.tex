@@ -27,22 +27,29 @@
 
 \begin{frame}[c]{Historia}
   \begin{columns}
-    \column{0.7\textwidth}
-    \begin{itemize}
-      \item Creado por Guido Van Rossum
-      \item Holanda principios de la decade de los 90's
-      \item Sintaxis simple, práctica e intuitiva
-      \item De proposito general: NASA, motor de busqueda de Google, Bolsa de
-        Valores de Nueva York
-      \item Interpretado
-      \item Multiparadigma
-      \item Tipado dinámico
-      \item Python 2.x ya esta \textbf{descontinuado}, solo hay que usar el 3.x
-    \end{itemize}
     \column{0.3\textwidth}
         \begin{center}
             \includegraphics[scale=0.05]{Guido_van_Rossum_OSCON_2006.jpg}
         \end{center}
+    \column{0.7\textwidth}
+    \begin{itemize}
+      \item Creado por Guido Van Rossum
+      \pausa
+      \item Holanda principios de la decade de los 90's
+      \pausa
+      \item Sintaxis simple, práctica e intuitiva
+      \pausa
+      \item De proposito general: NASA, motor de busqueda de Google, Bolsa de
+        Valores de Nueva York
+      \pausa
+      \item Interpretado
+      \pausa
+      \item Multiparadigma
+      \pausa
+      \item Tipado dinámico
+      \pausa
+      \item Python 2.x ya esta \textbf{descontinuado}, solo hay que usar el 3.x
+    \end{itemize}
   \end{columns}
 \end{frame}
 
@@ -50,13 +57,38 @@
   Python puede:
   \begin{itemize}
     \item ser usado en un servidor para crear aplicaciones web
+    \pausa
     \item ser usado junto algún software para crear flojos de trajo.
+    \pausa
     \item conectarse a un sistema de base de datos. También puede leer y
           modificar archivos.
+    \pausa
     \item ser usado para manejar una gran cantidad de datos y funciones
           matemáticas complejas.
+    \pausa
     \item ser usado para el desarrollo de prototipado rápido o para software
           listo para producción.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{¿Por qué Python?}
+  \begin{itemize}
+    \item Python trabaja en diferentes plataformas (Windows, Mac, Linux,
+      Raspberry Pi, etc).
+    \pausa
+    \item Python tiene una sintaxis simple, similar a la del idioma Ingles.
+    \pausa
+    \item Python tiene una sintaxis que permite a los desarrolladores
+      escribir programas con pocas líneas de código en comparación con otros
+      lenguajes de programación.
+    \pausa
+    \item Python es un lenguaje de programación interpretado, esto quiere
+      decir que el código puede ser ejecutado tan pronto como el código sea
+      escrito. En otras palabras se pueden hacer programas prototipos muy
+      rápido.
+    \pausa
+    \item Python puede ser tratado de forma \textbf{procedural},
+      \textbf{orientado a objetos} o \textbf{funcional}
   \end{itemize}
 \end{frame}
 
@@ -71,10 +103,14 @@
 
 \begin{frame}[c]{Reglas de codificación}
   \begin{itemize}
-    \item Los comentario de una línea inician con "\#"
+    \item Los comentario de una línea inician con \textcolor{codegreen}{"\#"}
+    \pausa
     \item Los comentarios de varias líneas inician con """ y terminan con """
-    \item La sangria cuenta
-    \item No poner signos de putuación al final de la instrucción
+    \pausa
+    \item La sangría (sangrado o \textit{indentado}) cuenta
+    \pausa
+    \item No poner signos de puntuación al final de la instrucción
+    \pausa
     \item Es sensible a mayúsculas
     \item Errores de programación:
           \begin{itemize}
@@ -204,10 +240,10 @@ print(y)
     Cada palabra comienza con una mayúscula:
     \textbf{ElNombreDeMiVariable}
   \end{block}
-  \begin{block}{Snake case}
+  \begin{exampleblock}{Snake case}
     Cada palabra esta separada por un guión bajo:
     \textbf{el\_nombre\_de\_mi\_variable}
-  \end{block}
+  \end{exampleblock}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -223,10 +259,10 @@ print(y)
   print(olor)
   \end{lstlisting}
 
-  \begin{block}{Nota}
+  \begin{alertblock}{Nota}
     Hay que asegurar que el número de variables sea igual al número de valores
     asignados, ya que de lo contrario se podría generar un error.
-  \end{block}
+  \end{alertblock}
 \end{frame}
 
 \begin{frame}[fragile]
