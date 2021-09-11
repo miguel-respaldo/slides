@@ -92,6 +92,22 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[c]{La sintaxis de Python comparada con otros lenguajes}
+  \begin{itemize}
+    \item Python fue diseñado para facilitar la lectura y tiene algunas
+      similitudes con el idioma inglés con influencia de las matemáticas.
+    \pausa
+    \item Python usa \emph{salto de líneas} para completar un comando, a
+      diferencia de otros lenguajes de programación que a menudo usan punto
+      y coma o paréntesis.
+    \pausa
+    \item Python se basa en la \emph{sangría}, usando espacios en blanco, para
+      definir el alcance; como el alcance de los bucles, funciones y clases.
+      Otros lenguajes de programación a menudo usan corchetes para este
+      propósito.
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[c]{Ejecución de programas}
   \begin{block}{Código fuente}
     El código generado en Lenguaje Python se almacena en un archivo con
@@ -103,16 +119,17 @@
 
 \begin{frame}[c]{Reglas de codificación}
   \begin{itemize}
-    \item Los comentario de una línea inician con
-      "\textcolor{codeComment}{\#}"
+    \item Los comentario de una línea inician con \textcolor{codeComment}{\#}
     \pausa
-    \item Los comentarios de varias líneas inician con """ y terminan con """
+    \item Los comentarios de varias líneas inician con
+    \textcolor{codeComment}{"""} y terminan con \textcolor{codeComment}{"""}
     \pausa
     \item La sangría (sangrado o \textit{indentado}) cuenta
     \pausa
     \item No poner signos de puntuación al final de la instrucción
     \pausa
     \item Es sensible a mayúsculas
+    \pausa
     \item Errores de programación:
           \begin{itemize}
             \item Sintaxis
@@ -233,14 +250,17 @@ print(y)
 \begin{frame}[c]{Variables con múltiples palabras}
   Un nombre de una variable con múltiples palabras puede ser difícil de leer.
   Hay varias técnicas que se pueden usar para que sean mas legibles.
+  \pausa
   \begin{block}{Camel case}
     Cada palabra, excepto la primera, comienza con una mayúscula:
     \textbf{elNombreDeMiVariable}
   \end{block}
+  \pausa
   \begin{block}{Pascal case}
     Cada palabra comienza con una mayúscula:
     \textbf{ElNombreDeMiVariable}
   \end{block}
+  \pausa
   \begin{exampleblock}{Snake case}
     Cada palabra esta separada por un guión bajo:
     \textbf{el\_nombre\_de\_mi\_variable}
