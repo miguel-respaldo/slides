@@ -389,6 +389,69 @@ unaFuncion()
   \end{lstlisting}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Variables globales}
+
+  Si se crea una variable con el mismo nombre dentro de una función,
+  esta variable será \emph{local} y solo se puede usar dentro de la función.
+  La variable global con el mismo nombre permanecerá como estaba, global y
+  con el valor original.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+x = "increible"
+
+def unaFuncion():
+    x = "fantastico"
+    print("Python es " + x)
+
+unaFuncion()
+
+print("Python es " + x)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{La palabra reservada \textbf{global}}
+
+  Normalmente, cuando se crea una variable dentro de una función, esa
+  variable es local y solo se puede usar dentro de esa función.
+
+  \vspace{\baselineskip}
+  Para crear una variable global dentro de una función, puede utilizar
+  la palabra reservada \textcolor{codeKeyword}{global}.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+def unaFuncion():
+    global x
+    x = "fantastico"
+
+unaFuncion()
+
+print("Python es " + x)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{La palabra reservada \textbf{global}}
+
+  Además, use la palabra reservada \textcolor{codeKeyword}{global} si desea
+  cambiar una variable global dentro de una función.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+x = "increible"
+
+def unaFuncion():
+    global x
+    x = "fantastico"
+
+unaFuncion()
+
+print("Python es " + x)
+  \end{lstlisting}
+\end{frame}
 
 
 \begin{frame}[c]{Créditos}
