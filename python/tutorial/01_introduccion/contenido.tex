@@ -225,25 +225,30 @@ print(y)
   Las variables pueden tener un nombre corto (como \textit{x} y \textit{y})
   o tener un nombre más \textbf{descriptivo} (\textit{edad}, \textit{nombre} 
   \textit{volumen\_total}). Las reglas para las variables en Python son:
+  \pausa
 
   \begin{itemize}
     \item El nombre de la variable tiene que \textbf{comenzar} con una
       \textbf{letra} o un \textbf{guión bajo} (\_).
+    \pausa
     \item El nombre de una variable \textbf{no} puede iniciar con
       \textit{número.}
+    \pausa
     \item El nombre de una variable solo puede contener caracteres
       alfa-numéricos y guiones bajo (\textit{A-Z, a-z, 0-9 y "\_"})
+    \pausa
     \item Los nombre de las variables son sensibles a mayúsculas y minúsculas
       (edad, Edad y EDAD son tres variables deferentes)
   \end{itemize}
+  \pausa
 
   \begin{lstlisting}[language=Python]
-    myvar = "Juan"
-    my_var = "Juan"
-    _my_var = "Juan"
-    myVar = "Juan"
-    MYVAR = "Juan"
-    myvar2 = "Juan"
+ myvar = "Juan"
+ my_var = "Juan"
+ _my_var = "Juan"
+ myVar = "Juan"
+ MYVAR = "Juan"
+ myvar2 = "Juan"
   \end{lstlisting}
 \end{frame}
 
@@ -299,7 +304,6 @@ print(y)
   print(y)
   print(z)
   \end{lstlisting}
-
 \end{frame}
 
 \begin{frame}[fragile]
@@ -317,5 +321,77 @@ print(y)
   print(b)
   print(c)
   \end{lstlisting}
+\end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Salida de variables}
+
+  La sentencia \textcolor{codeKeyword}{print} de Python es usada para
+  imprimir en pantalla las variables.
+
+  \vspace{\baselineskip}
+  Para combinar un texto y una variable (de texto), Python usa el carácter
+  \textcolor{codeKeyword}{+}
+
+  \begin{lstlisting}[language=Python]
+x = "increible"
+print("Python es " + x)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Salida de variables}
+
+  Para números, el carácter de \textcolor{codeKeyword}{+} sirve como un
+  operador matemático:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+x = 5
+y = 10
+print(x + y)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Salida de variables}
+
+  \begin{alertblock}{}
+    Si se combina una cadena de texto con un número, Python dará un error.
+  \end{alertblock}
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+x = 5
+y = "Juan"
+print(x + y)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Variables globales}
+
+  Las variables que son creadas fuera de una función (como se muestra en el
+  ejemplo de abajo) son conocidas como \emph{variables globales}.
+
+  \vspace{\baselineskip}
+  Las variables globales puede ser usadas donde sea, dentro y fuera de una
+  función.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+x = "increible"
+
+def unaFuncion():
+    print("Python es " + x)
+
+unaFuncion()
+  \end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}[c]{Créditos}
+  El material es basado en 
+  \href{https://www.w3schools.com/python/default.asp}{https://www.w3schools.com/python/default.asp}
 \end{frame}
