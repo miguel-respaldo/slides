@@ -6,22 +6,19 @@
 
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides
 
-\graphicspath{{../../img/}{../../../styles/iteso/}}
-% use the command "usepackage" instead of "usecolortheme" to use the path to styles
-\usepackage{../../../styles/iteso/beamercolorthemeiteso}
+\graphicspath{{../../img/}}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx} % Allows including images
 \usepackage{listings}
 
-\title{Introducción a Python} % The short title appears at the bottom of every slide,
+\title{Tipos de datos} % The short title appears at the bottom of every slide,
                                                % the full title is only on the title page
 \author{Miguel Bernal Marin} % Your name
-\institute[ITESO] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\institute[Escuela] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
- ITESO, Universidad \\
- Jesuita de Guadalajara \\% Your institution for the title page
+ Nombre de la Institución\\% Your institution for the title page
 \medskip
-\textit{miguel.bernal@iteso.mx} % Your email address
+\textit{correo} % Your email address
 }
 \date{
     \today
@@ -57,41 +54,15 @@
 %"mystyle" code listing set
 \lstset{style=mystyle}
 
-%------------------------------------------------------------
-%The next block of commands puts the table of contents at the
-%beginning of each section and highlights the current section:
-\AtBeginSection[]
-{
-  \begin{frame}
-    \frametitle{Contenido}
-    \tableofcontents[currentsection]
-  \end{frame}
-}
-%------------------------------------------------------------
-
 \newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
 %\newcommand{\pausa}{}      % Para que NO salgan las pausas
 
 \begin{document}
-{ % Portada de la universidad
-  \setbeamertemplate{footline}{}
-  \usebackgroundtemplate{\includegraphics[width=\paperwidth]{fondo-portada.png}}
-  \begin{frame}
-  \end{frame}
-}
 
 \begin{frame}
     \titlepage
 \end{frame}
 
-\usebackgroundtemplate{\includegraphics[width=\paperwidth]{fondo.png}}
-
 \input{contenido.tex}
 
-{ % Portada de la universidad
-  \setbeamertemplate{footline}{}
-  \usebackgroundtemplate{\includegraphics[width=\paperwidth]{fondo-portada.png}}
-  \begin{frame}
-  \end{frame}
-}
 \end{document}

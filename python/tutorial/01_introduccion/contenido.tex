@@ -27,22 +27,29 @@
 
 \begin{frame}[c]{Historia}
   \begin{columns}
-    \column{0.7\textwidth}
-    \begin{itemize}
-      \item Creado por Guido Van Rossum
-      \item Holanda principios de la decade de los 90's
-      \item Sintaxis simple, práctica e intuitiva
-      \item De proposito general: NASA, motor de busqueda de Google, Bolsa de
-        Valores de Nueva York
-      \item Interpretado
-      \item Multiparadigma
-      \item Tipado dinámico
-      \item Python 2.x ya esta \textbf{descontinuado}, solo hay que usar el 3.x
-    \end{itemize}
     \column{0.3\textwidth}
         \begin{center}
             \includegraphics[scale=0.05]{Guido_van_Rossum_OSCON_2006.jpg}
         \end{center}
+    \column{0.7\textwidth}
+    \begin{itemize}
+      \item Creado por Guido Van Rossum
+      \pausa
+      \item Holanda principios de la decade de los 90's
+      \pausa
+      \item Sintaxis simple, práctica e intuitiva
+      \pausa
+      \item De proposito general: NASA, motor de busqueda de Google, Bolsa de
+        Valores de Nueva York
+      \pausa
+      \item Interpretado
+      \pausa
+      \item Multiparadigma
+      \pausa
+      \item Tipado dinámico
+      \pausa
+      \item Python 2.x ya esta \textbf{descontinuado}, solo hay que usar el 3.x
+    \end{itemize}
   \end{columns}
 \end{frame}
 
@@ -50,13 +57,54 @@
   Python puede:
   \begin{itemize}
     \item ser usado en un servidor para crear aplicaciones web
+    \pausa
     \item ser usado junto algún software para crear flojos de trajo.
+    \pausa
     \item conectarse a un sistema de base de datos. También puede leer y
           modificar archivos.
+    \pausa
     \item ser usado para manejar una gran cantidad de datos y funciones
           matemáticas complejas.
+    \pausa
     \item ser usado para el desarrollo de prototipado rápido o para software
           listo para producción.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{¿Por qué Python?}
+  \begin{itemize}
+    \item Python trabaja en diferentes plataformas (Windows, Mac, Linux,
+      Raspberry Pi, etc).
+    \pausa
+    \item Python tiene una sintaxis simple, similar a la del idioma Ingles.
+    \pausa
+    \item Python tiene una sintaxis que permite a los desarrolladores
+      escribir programas con pocas líneas de código en comparación con otros
+      lenguajes de programación.
+    \pausa
+    \item Python es un lenguaje de programación interpretado, esto quiere
+      decir que el código puede ser ejecutado tan pronto como el código sea
+      escrito. En otras palabras se pueden hacer programas prototipos muy
+      rápido.
+    \pausa
+    \item Python puede ser tratado de forma \textbf{procedural},
+      \textbf{orientado a objetos} o \textbf{funcional}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{La sintaxis de Python comparada con otros lenguajes}
+  \begin{itemize}
+    \item Python fue diseñado para facilitar la lectura y tiene algunas
+      similitudes con el idioma inglés con influencia de las matemáticas.
+    \pausa
+    \item Python usa \emph{salto de líneas} para completar un comando, a
+      diferencia de otros lenguajes de programación que a menudo usan punto
+      y coma o paréntesis.
+    \pausa
+    \item Python se basa en la \emph{sangría}, usando espacios en blanco, para
+      definir el alcance; como el alcance de los bucles, funciones y clases.
+      Otros lenguajes de programación a menudo usan corchetes para este
+      propósito.
   \end{itemize}
 \end{frame}
 
@@ -71,11 +119,17 @@
 
 \begin{frame}[c]{Reglas de codificación}
   \begin{itemize}
-    \item Los comentario de una línea inician con "\#"
-    \item Los comentarios de varias líneas inician con """ y terminan con """
-    \item La sangria cuenta
-    \item No poner signos de putuación al final de la instrucción
+    \item Los comentario de una línea inician con \textcolor{codeComment}{\#}
+    \pausa
+    \item Los comentarios de varias líneas inician con
+    \textcolor{codeComment}{"""} y terminan con \textcolor{codeComment}{"""}
+    \pausa
+    \item La sangría (sangrado o \textit{indentado}) cuenta
+    \pausa
+    \item No poner signos de puntuación al final de la instrucción
+    \pausa
     \item Es sensible a mayúsculas
+    \pausa
     \item Errores de programación:
           \begin{itemize}
             \item Sintaxis
@@ -87,7 +141,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Comentarios en Python}
-
+  \vspace{\baselineskip}
   Los comentarios pueden ser usados para
 
   \begin{itemize}
@@ -139,6 +193,7 @@ print(y)
   Si se quiere especificar el tipo de dato de una variable, esto se puede hacer
   haciendo "\textbf{casting}"
 
+  \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
   x = str(3)   # x guarda '3'
   y = int(3)   # y guarda 3
@@ -151,6 +206,7 @@ print(y)
 
   Se puede obtener el tipo de dato con la función \textbf{type()}
 
+  \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
   x = str(3)   # x guarda '3'
   y = int(3)   # y guarda 3
@@ -165,46 +221,55 @@ print(y)
 \begin{frame}[fragile,b]
   \frametitle{Nombre de variables}
 
+  \vspace{\baselineskip}
   Las variables pueden tener un nombre corto (como \textit{x} y \textit{y})
   o tener un nombre más \textbf{descriptivo} (\textit{edad}, \textit{nombre} 
   \textit{volumen\_total}). Las reglas para las variables en Python son:
+  \pausa
 
   \begin{itemize}
     \item El nombre de la variable tiene que \textbf{comenzar} con una
       \textbf{letra} o un \textbf{guión bajo} (\_).
+    \pausa
     \item El nombre de una variable \textbf{no} puede iniciar con
       \textit{número.}
+    \pausa
     \item El nombre de una variable solo puede contener caracteres
       alfa-numéricos y guiones bajo (\textit{A-Z, a-z, 0-9 y "\_"})
+    \pausa
     \item Los nombre de las variables son sensibles a mayúsculas y minúsculas
       (edad, Edad y EDAD son tres variables deferentes)
   \end{itemize}
+  \pausa
 
   \begin{lstlisting}[language=Python]
-    myvar = "Juan"
-    my_var = "Juan"
-    _my_var = "Juan"
-    myVar = "Juan"
-    MYVAR = "Juan"
-    myvar2 = "Juan"
+ myvar = "Juan"
+ my_var = "Juan"
+ _my_var = "Juan"
+ myVar = "Juan"
+ MYVAR = "Juan"
+ myvar2 = "Juan"
   \end{lstlisting}
 \end{frame}
 
 \begin{frame}[c]{Variables con múltiples palabras}
   Un nombre de una variable con múltiples palabras puede ser difícil de leer.
   Hay varias técnicas que se pueden usar para que sean mas legibles.
+  \pausa
   \begin{block}{Camel case}
     Cada palabra, excepto la primera, comienza con una mayúscula:
     \textbf{elNombreDeMiVariable}
   \end{block}
+  \pausa
   \begin{block}{Pascal case}
     Cada palabra comienza con una mayúscula:
     \textbf{ElNombreDeMiVariable}
   \end{block}
-  \begin{block}{Snake case}
+  \pausa
+  \begin{exampleblock}{Snake case}
     Cada palabra esta separada por un guión bajo:
     \textbf{el\_nombre\_de\_mi\_variable}
-  \end{block}
+  \end{exampleblock}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -212,6 +277,7 @@ print(y)
 
   Python permite asignar valores a múltiples variables en una sola linea:
 
+  \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
   color, sabor, olor = "azul", "dulce", "rosas"
   print(color)
@@ -219,10 +285,10 @@ print(y)
   print(olor)
   \end{lstlisting}
 
-  \begin{block}{Nota}
+  \begin{alertblock}{Nota}
     Hay que asegurar que el número de variables sea igual al número de valores
     asignados, ya que de lo contrario se podría generar un error.
-  \end{block}
+  \end{alertblock}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -231,13 +297,13 @@ print(y)
   También se puede asignar el mismo valor a múltiples variables en una sola
   línea.
 
+  \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
   x = y = z = "Manzana"
   print(x)
   print(y)
   print(z)
   \end{lstlisting}
-
 \end{frame}
 
 \begin{frame}[fragile]
@@ -247,6 +313,7 @@ print(y)
   etc. Python permite extraer los valores en variables separadas. A esto
   se le llama en ingles \textbf{unpacking}
 
+  \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
   frutas = ["manzana", "platano", "melon"]
   a, b, c = frutas
@@ -254,5 +321,139 @@ print(y)
   print(b)
   print(c)
   \end{lstlisting}
+\end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Salida de variables}
+
+  La sentencia \textcolor{codeKeyword}{print} de Python es usada para
+  imprimir en pantalla las variables.
+
+  \vspace{\baselineskip}
+  Para combinar un texto y una variable (de texto), Python usa el carácter
+  \textcolor{codeKeyword}{+}
+
+  \begin{lstlisting}[language=Python]
+x = "increible"
+print("Python es " + x)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Salida de variables}
+
+  Para números, el carácter de \textcolor{codeKeyword}{+} sirve como un
+  operador matemático:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+x = 5
+y = 10
+print(x + y)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Salida de variables}
+
+  \begin{alertblock}{}
+    Si se combina una cadena de texto con un número, Python dará un error.
+  \end{alertblock}
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+x = 5
+y = "Juan"
+print(x + y)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Variables globales}
+
+  Las variables que son creadas fuera de una función (como se muestra en el
+  ejemplo de abajo) son conocidas como \emph{variables globales}.
+
+  \vspace{\baselineskip}
+  Las variables globales puede ser usadas donde sea, dentro y fuera de una
+  función.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+x = "increible"
+
+def unaFuncion():
+    print("Python es " + x)
+
+unaFuncion()
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Variables globales}
+
+  Si se crea una variable con el mismo nombre dentro de una función,
+  esta variable será \emph{local} y solo se puede usar dentro de la función.
+  La variable global con el mismo nombre permanecerá como estaba, global y
+  con el valor original.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+x = "increible"
+
+def unaFuncion():
+    x = "fantastico"
+    print("Python es " + x)
+
+unaFuncion()
+
+print("Python es " + x)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{La palabra reservada \textbf{global}}
+
+  Normalmente, cuando se crea una variable dentro de una función, esa
+  variable es local y solo se puede usar dentro de esa función.
+
+  \vspace{\baselineskip}
+  Para crear una variable global dentro de una función, puede utilizar
+  la palabra reservada \textcolor{codeKeyword}{global}.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+def unaFuncion():
+    global x
+    x = "fantastico"
+
+unaFuncion()
+
+print("Python es " + x)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{La palabra reservada \textbf{global}}
+
+  Además, use la palabra reservada \textcolor{codeKeyword}{global} si desea
+  cambiar una variable global dentro de una función.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+x = "increible"
+
+def unaFuncion():
+    global x
+    x = "fantastico"
+
+unaFuncion()
+
+print("Python es " + x)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[c]{Créditos}
+  El material está basado en
+  \href{https://www.w3schools.com/python/default.asp}{https://www.w3schools.com/python/default.asp}
 \end{frame}

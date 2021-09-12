@@ -1,0 +1,259 @@
+% ex: ts=2 sw=2 sts=2 et filetype=tex
+% SPDX-License-Identifier: CC-BY-SA-4.0
+\begin{frame}
+    \frametitle{Contenido}
+    \tableofcontents
+\end{frame}
+
+\section{Tipos de Datos}
+
+\begin{frame}[c]{Tipo de datos integrados}
+
+  En programación, el tipo de dato es un concepto importante.
+
+  \vspace{\baselineskip}
+  Las variables pueden almacenar datos de diferentes tipos y diferentes
+  tipos pueden hacer cosas diferentes.
+
+  \vspace{\baselineskip}
+  Python tiene los siguientes tipos de datos integrados de forma
+  predeterminada, en estas categorías:
+
+  \begin{table}[]
+  \begin{tabular}{ll}
+    Texto & \textcolor{codeKeyword}{str} \\
+    \pausa
+    Numérico & \textcolor{codeKeyword}{int}, \textcolor{codeKeyword}{float},
+     \textcolor{codeKeyword}{complex} \\
+    \pausa
+    Secuencia & \textcolor{codeKeyword}{list}, \textcolor{codeKeyword}{tuple},
+     \textcolor{codeKeyword}{range} \\
+    \pausa
+    Mapeo & \textcolor{codeKeyword}{dict} \\
+    \pausa
+    Conjunto & \textcolor{codeKeyword}{set},
+     \textcolor{codeKeyword}{frozenset} \\
+    \pausa
+    Boleano & \textcolor{codeKeyword}{bool} \\
+    \pausa
+    Binario & \textcolor{codeKeyword}{bytes},
+     \textcolor{codeKeyword}{bytearray}, \textcolor{codeKeyword}{memoryview} \\
+  \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Obteniendo el tipo de dato}
+
+  Se puede obtener el tipo de dato con la función
+  \textcolor{codeKeyword}{type}()
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  x = str(3)   # x guarda '3'
+  y = int(3)   # y guarda 3
+  z = float(3) # z guarda 3.0
+
+  print( type(x) )
+  print( type(y) )
+  print( type(z) )
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Configurando el tipo de dato}
+
+  En Python, el tipo de dato es configurado/asociado cuando se asigna un
+  valor a una variable:
+
+  \begin{lstlisting}[language=Python]
+x = "Hola Mundo"                      # str
+x = 20                                # int
+x = 20.5                              # float
+x = 1j                                # complex
+x = ["manzana", "platano", "naranja"] # list
+x = ("manzana", "platano", "naranja") # tuple
+x = range(6)                          # range
+x = {"nombre" : "juan", "edad": 18}   # dict
+x = {"manzana", "platano", "naranja"} # set
+x = frozenset({"manzana", "platano", "naranja"}) # frozenset
+x = True                              # bool
+x = b"Hola"                           # bytes
+x = bytearray(5)                      # bytearray
+x = memoryview(bytes(5))              # memoryview
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Configurando un tipo de dato especifico}
+
+  Si se quiere especificar un tipo de dato especifico, se puede utilizar
+  las siguientes funciones constructoras:
+
+  \begin{lstlisting}[language=Python]
+x = str("Hola Mundo")                        # str
+x = int(20)                                  # int
+x = float(20.5)                              # float
+x = complex(1j)                              # complex
+x = list(("manzana", "platano", "naranja"))  # list
+x = tuple(("manzana", "platano", "naranja")) # tuple
+x = range(6)                                 # range
+x = dict(nombre = "juan", edad = 18)         # dict
+x = set(("manzana", "platano", "naranja"))   # set
+x = frozenset(("manzana", "platano", "naranja")) # frozenset
+x = bool(5)                                  # bool
+x = bytes(5)                                 # bytes
+x = bytearray(5)                             # bytearray
+x = memoryview(bytes(5))                     # memoryview
+  \end{lstlisting}
+\end{frame}
+
+\section{Números en Python}
+
+\begin{frame}[fragile]
+  \frametitle{Números en Python}
+
+  Hay tres tipos numéricos en Python:
+
+  \begin{itemize}
+    \item \textcolor{codeKeyword}{int}
+    \item \textcolor{codeKeyword}{float}
+    \item \textcolor{codeKeyword}{complex}
+  \end{itemize}
+
+  Las variables numéricas son creadas cuando se le asigna su valor:
+
+  \begin{lstlisting}[language=Python]
+  x = 1    # int
+  y = 2.8  # float
+  z = j    # complex
+  \end{lstlisting}
+
+  \pausa
+  Para verificar el tipo de dato de cualquier objeto en Python, se usa la
+  función \textcolor{codeKeyword}{type}():
+
+  \begin{lstlisting}[language=Python]
+  print( type(x) )
+  print( type(y) )
+  print( type(z) )
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Números Enteros}
+
+  Un entero (\textcolor{codeKeyword}{int}) es un número positivo o
+  negativo, sin decimales de longitud ilimitada.
+
+  \begin{lstlisting}[language=Python]
+  x = 1
+  y = 35656222554887711
+  z = -3255522
+
+  print( type(x) )
+  print( type(y) )
+  print( type(z) )
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Números de punto flotante}
+
+  Un número de punto flotante (\textcolor{codeKeyword}{float}), es un número
+  positivo o negativo, que contiene uno o más decimales.
+
+  \begin{lstlisting}[language=Python]
+  x = 3.1416
+  y = 1.0
+  z = -35.59
+
+  print( type(x) )
+  print( type(y) )
+  print( type(z) )
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Números de punto flotante}
+
+  Los número de punto flotante (\textcolor{codeKeyword}{float}) pueden ser
+  escritos como números en \emph{notación científica} con una "\textbf{e}"
+  para indicar la potencia de 10.
+
+  \begin{lstlisting}[language=Python]
+  x = 35e3
+  y = 12E4
+  z = -87.7e100
+
+  print( type(x) )
+  print( type(y) )
+  print( type(z) )
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Números Complejos}
+
+  Los números complejos son escritos con una "\textbf{j}" para indicar
+  la parte imaginaria:
+
+  \begin{lstlisting}[language=Python]
+  x = 3+5j
+  y = 5j
+  z = -2.5j
+
+  print( type(x) )
+  print( type(y) )
+  print( type(z) )
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Conversión entre tipo de datos}
+
+  Se pueden convertir de un tipo de dato a otro con las siguientes
+  funciones \textcolor{codeKeyword}{int}(), \textcolor{codeKeyword}{float}()
+  y \textcolor{codeKeyword}{complex}():
+
+  \begin{lstlisting}[language=Python]
+  x = 1    # int
+  y = 2.8  # float
+  z = -1j  # complex
+
+  # convertir de int a float:
+  a = float(x)
+  # convertir de float a int:
+  b = int(y)
+  # convertir de int a complex:
+  c = complex(x)
+  \end{lstlisting}
+
+  \begin{alertblock}{Nota}
+    No se puede convertir un \textbf{número complejo} en otro tipo de dato numérico.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Números aleatorios}
+
+  Python no tiene una función de \textcolor{codeKeyword}{random}() para
+  hacer números aleatorios, pero Python tiene integrado un modulo llamado
+  \textcolor{codeKeyword}{random} que puede ser usado para hacer números
+  aleatorios:
+
+  \vspace{\baselineskip}
+  Importamos el modulo de random, y desplegamos un número aleatorio entre 1
+  y 9:
+
+  \begin{lstlisting}[language=Python]
+  import random
+
+  print( random.randrange(1,10) )
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[c]{Créditos}
+  El material está basado en
+  \href{https://www.w3schools.com/python/default.asp}{https://www.w3schools.com/python/default.asp}
+\end{frame}
