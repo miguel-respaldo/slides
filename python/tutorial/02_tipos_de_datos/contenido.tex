@@ -21,23 +21,23 @@
 
   \begin{table}[]
   \begin{tabular}{ll}
-    Texto & \textcolor{codeKeyword}{str} \\
+    Texto & \textcolor{codeKeyword2}{str} \\
     \pausa
-    Numérico & \textcolor{codeKeyword}{int}, \textcolor{codeKeyword}{float},
-     \textcolor{codeKeyword}{complex} \\
+    Numérico & \textcolor{codeKeyword2}{int}, \textcolor{codeKeyword2}{float},
+     \textcolor{codeKeyword2}{complex} \\
     \pausa
-    Secuencia & \textcolor{codeKeyword}{list}, \textcolor{codeKeyword}{tuple},
-     \textcolor{codeKeyword}{range} \\
+    Secuencia & \textcolor{codeKeyword2}{list}, \textcolor{codeKeyword2}{tuple},
+     \textcolor{codeKeyword2}{range} \\
     \pausa
-    Mapeo & \textcolor{codeKeyword}{dict} \\
+    Mapeo & \textcolor{codeKeyword2}{dict} \\
     \pausa
-    Conjunto & \textcolor{codeKeyword}{set},
-     \textcolor{codeKeyword}{frozenset} \\
+    Conjunto & \textcolor{codeKeyword2}{set},
+     \textcolor{codeKeyword2}{frozenset} \\
     \pausa
-    Boleano & \textcolor{codeKeyword}{bool} \\
+    Boleano & \textcolor{codeKeyword2}{bool} \\
     \pausa
-    Binario & \textcolor{codeKeyword}{bytes},
-     \textcolor{codeKeyword}{bytearray}, \textcolor{codeKeyword}{memoryview} \\
+    Binario & \textcolor{codeKeyword2}{bytes},
+     \textcolor{codeKeyword2}{bytearray}, \textcolor{codeKeyword2}{memoryview} \\
   \end{tabular}
   \end{table}
 \end{frame}
@@ -46,7 +46,7 @@
   \frametitle{Obteniendo el tipo de dato}
 
   Se puede obtener el tipo de dato con la función
-  \textcolor{codeKeyword}{type}()
+  \textcolor{codeKeyword2}{type}()
 
   \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
@@ -116,9 +116,9 @@ x = memoryview(bytes(5))                     # memoryview
   Hay tres tipos numéricos en Python:
 
   \begin{itemize}
-    \item \textcolor{codeKeyword}{int}
-    \item \textcolor{codeKeyword}{float}
-    \item \textcolor{codeKeyword}{complex}
+    \item \textcolor{codeKeyword2}{int}
+    \item \textcolor{codeKeyword2}{float}
+    \item \textcolor{codeKeyword2}{complex}
   \end{itemize}
 
   Las variables numéricas son creadas cuando se le asigna su valor:
@@ -131,7 +131,7 @@ x = memoryview(bytes(5))                     # memoryview
 
   \pausa
   Para verificar el tipo de dato de cualquier objeto en Python, se usa la
-  función \textcolor{codeKeyword}{type}():
+  función \textcolor{codeKeyword2}{type}():
 
   \begin{lstlisting}[language=Python]
   print( type(x) )
@@ -143,7 +143,7 @@ x = memoryview(bytes(5))                     # memoryview
 \begin{frame}[fragile]
   \frametitle{Números Enteros}
 
-  Un entero (\textcolor{codeKeyword}{int}) es un número positivo o
+  Un entero (\textcolor{codeKeyword2}{int}) es un número positivo o
   negativo, sin decimales de longitud ilimitada.
 
   \begin{lstlisting}[language=Python]
@@ -160,7 +160,7 @@ x = memoryview(bytes(5))                     # memoryview
 \begin{frame}[fragile]
   \frametitle{Números de punto flotante}
 
-  Un número de punto flotante (\textcolor{codeKeyword}{float}), es un número
+  Un número de punto flotante (\textcolor{codeKeyword2}{float}), es un número
   positivo o negativo, que contiene uno o más decimales.
 
   \begin{lstlisting}[language=Python]
@@ -177,7 +177,7 @@ x = memoryview(bytes(5))                     # memoryview
 \begin{frame}[fragile]
   \frametitle{Números de punto flotante}
 
-  Los número de punto flotante (\textcolor{codeKeyword}{float}) pueden ser
+  Los número de punto flotante (\textcolor{codeKeyword2}{float}) pueden ser
   escritos como números en \emph{notación científica} con una "\textbf{e}"
   para indicar la potencia de 10.
 
@@ -213,8 +213,8 @@ x = memoryview(bytes(5))                     # memoryview
   \frametitle{Conversión entre tipo de datos}
 
   Se pueden convertir de un tipo de dato a otro con las siguientes
-  funciones \textcolor{codeKeyword}{int}(), \textcolor{codeKeyword}{float}()
-  y \textcolor{codeKeyword}{complex}():
+  funciones \textcolor{codeKeyword2}{int}(), \textcolor{codeKeyword2}{float}()
+  y \textcolor{codeKeyword2}{complex}():
 
   \begin{lstlisting}[language=Python]
   x = 1    # int
@@ -237,13 +237,13 @@ x = memoryview(bytes(5))                     # memoryview
 \begin{frame}[fragile]
   \frametitle{Números aleatorios}
 
-  Python no tiene una función de \textcolor{codeKeyword}{random}() para
+  Python no tiene una función de \textbf{random}() para
   hacer números aleatorios, pero Python tiene integrado un modulo llamado
-  \textcolor{codeKeyword}{random} que puede ser usado para hacer números
+  \textbf{random} que puede ser usado para hacer números
   aleatorios:
 
   \vspace{\baselineskip}
-  Importamos el modulo de random, y desplegamos un número aleatorio entre 1
+  Importamos el modulo de \textbf{random}, y desplegamos un número aleatorio entre 1
   y 9:
 
   \begin{lstlisting}[language=Python]
