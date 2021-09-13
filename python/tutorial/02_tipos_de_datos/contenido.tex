@@ -9,6 +9,7 @@
 
 \begin{frame}[c]{Tipo de datos integrados}
 
+  \vspace{\baselineskip}
   En programación, el tipo de dato es un concepto importante.
 
   \vspace{\baselineskip}
@@ -63,6 +64,7 @@
 \begin{frame}[fragile]
   \frametitle{Configurando el tipo de dato}
 
+  \vspace{\baselineskip}
   En Python, el tipo de dato es configurado/asociado cuando se asigna un
   valor a una variable:
 
@@ -87,6 +89,7 @@ x = memoryview(bytes(5))              # memoryview
 \begin{frame}[fragile]
   \frametitle{Configurando un tipo de dato especifico}
 
+  \vspace{\baselineskip}
   Si se quiere especificar un tipo de dato especifico, se puede utilizar
   las siguientes funciones constructoras:
 
@@ -113,6 +116,7 @@ x = memoryview(bytes(5))                     # memoryview
 \begin{frame}[fragile]
   \frametitle{Números en Python}
 
+  \vspace{\baselineskip}
   Hay tres tipos numéricos en Python:
 
   \begin{itemize}
@@ -126,7 +130,7 @@ x = memoryview(bytes(5))                     # memoryview
   \begin{lstlisting}[language=Python]
   x = 1    # int
   y = 2.8  # float
-  z = j    # complex
+  z = 1j   # complex
   \end{lstlisting}
 
   \pausa
@@ -146,6 +150,7 @@ x = memoryview(bytes(5))                     # memoryview
   Un entero (\textcolor{codeKeyword2}{int}) es un número positivo o
   negativo, sin decimales de longitud ilimitada.
 
+  \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
   x = 1
   y = 35656222554887711
@@ -163,6 +168,7 @@ x = memoryview(bytes(5))                     # memoryview
   Un número de punto flotante (\textcolor{codeKeyword2}{float}), es un número
   positivo o negativo, que contiene uno o más decimales.
 
+  \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
   x = 3.1416
   y = 1.0
@@ -181,6 +187,7 @@ x = memoryview(bytes(5))                     # memoryview
   escritos como números en \emph{notación científica} con una "\textbf{e}"
   para indicar la potencia de 10.
 
+  \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
   x = 35e3
   y = 12E4
@@ -198,6 +205,7 @@ x = memoryview(bytes(5))                     # memoryview
   Los números complejos son escritos con una "\textbf{j}" para indicar
   la parte imaginaria:
 
+  \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
   x = 3+5j
   y = 5j
@@ -212,6 +220,7 @@ x = memoryview(bytes(5))                     # memoryview
 \begin{frame}[fragile]
   \frametitle{Conversión entre tipo de datos}
 
+  \vspace{\baselineskip}
   Se pueden convertir de un tipo de dato a otro con las siguientes
   funciones \textcolor{codeKeyword2}{int}(), \textcolor{codeKeyword2}{float}()
   y \textcolor{codeKeyword2}{complex}():
@@ -229,6 +238,7 @@ x = memoryview(bytes(5))                     # memoryview
   c = complex(x)
   \end{lstlisting}
 
+  \pausa
   \begin{alertblock}{Nota}
     No se puede convertir un \textbf{número complejo} en otro tipo de dato numérico.
   \end{alertblock}
