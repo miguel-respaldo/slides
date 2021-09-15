@@ -315,6 +315,189 @@ x = memoryview(bytes(5))                     # memoryview
   \end{lstlisting}
 \end{frame}
 
+\section{Lógicos}
+
+\begin{frame}[fragile]
+  \frametitle{Valores Lógicos (\emph{Boleanos})}
+  Los booleanos representan uno de dos valores: Verdadero
+  (\textcolor{codeKeyword2}{True}) o Falso
+  (\textcolor{codeKeyword2}{False}).
+
+  \vspace{\baselineskip}
+  En programación, a menudo es necesario saber si una expresión es verdadera
+  o falsa. Se puede evaluar cualquier expresión en Python y obtener una de
+  dos respuestas, Verdadero (\textcolor{codeKeyword2}{True})
+  o Falso (\textcolor{codeKeyword2}{False}).
+
+  \vspace{\baselineskip}
+  Cuando se comparan dos valores, la expresión se evalúa y Python
+  devuelve la respuesta booleana: 
+
+  \begin{lstlisting}[language=Python]
+  print(10 > 9)
+  print(10 == 9)
+  print(10 < 9)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Valores Lógicos (\emph{Boleanos})}
+
+  Cuando se corre una condición en una sentencia
+  \textcolor{codeKeyword}{if}, Python regresa Verdadero
+  (\textcolor{codeKeyword2}{True}) o Falso
+  (\textcolor{codeKeyword2}{False}):
+
+  \vspace{\baselineskip}
+  Ejemplo: imprimir un mensaje en función de si la condición es Verdadero
+  (\textcolor{codeKeyword2}{True}) o Falso
+  (\textcolor{codeKeyword2}{False}):
+  \begin{lstlisting}[language=Python]
+a = 200
+b = 33
+
+if b > a:
+  print("b es mas grande que a")
+else:
+  print("b No es mas grande que a") 
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Evaluando valores y variables}
+
+  La función \textcolor{codeKeyword2}{bool}() permite evaluar cualquier
+  valor y a cambio, regresa el valor Verdadero o Falso.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+print(bool("Hola"))
+print(bool(15))
+
+x = "Hola"
+y = 15
+
+print(bool(x))
+print(bool(y))
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{La mayoría de los valores son verdadero}
+
+  \vspace{\baselineskip}
+  La función \textcolor{codeKeyword2}{bool}() permite evaluar cualquier
+  valor y a cambio, regresa el valor Verdadero o Falso.
+
+  \pausa
+  \vspace{\baselineskip}
+  Casi cualquier valor se evalúa como \textbf{Verdadero} si tiene algún
+  tipo de contenido.
+
+  \pausa
+  \vspace{\baselineskip}
+  Cualquier cadena es verdadera, excepto las cadenas vacías.
+
+  \pausa
+  \vspace{\baselineskip}
+  Cualquier número es verdadero, excepto 0.
+
+  \pausa
+  \vspace{\baselineskip}
+  Cualquier lista, tupla, conjunto y diccionario son verdaderos, excepto
+  los vacíos.
+  \begin{lstlisting}[language=Python]
+bool("abc")
+bool(123)
+bool(["manzana", "naranja", "platano"])
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Algunos valores son falsos}
+
+  De hecho, no hay muchos valores que se evalúen como \textbf{Falso},
+  excepto los valores vacíos, como \textbf{()}, \textbf{[]}, \textbf{\{\}},
+  \textbf{""}, el número \textbf{0} y el
+  valor \textbf{None}. Y, por supuesto, el valor \textbf{False} se evalúa
+  como falso.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+bool(False)
+bool(None)
+bool(0)
+bool("")
+bool(())
+bool([])
+bool({}) 
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Algunos valores son falsos}
+
+  Un valor más, u objeto en este caso, se evalúa como Falso, y eso es si
+  se tiene un objeto que está hecho a partir de una clase con una función
+  \emph{\_\_len\_\_} que devuelve 0 o Falso: 
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+class myclass():
+  def __len__(self):
+    return 0
+
+myobj = myclass()
+print(bool(myobj))
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Las funciones pueden regresar valores lógicos (boleanos)}
+
+  Se puede crear una función que regrese un valor lógico (boleano)
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+def miFuncion() :
+  return True
+
+print(miFuncion())
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Las funciones pueden regresar valores lógicos (boleanos)}
+
+  Se puede ejecutar código en base al valor de retorno de una función:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+def miFuncion() :
+  return True
+
+if miFuncion():
+  print("Si!")
+else:
+  print("No!") 
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Las funciones pueden regresar valores lógicos (boleanos)}
+
+  Python también tiene muchas funciones integradas que devuelven un valor
+  booleano, como la función \textcolor{codeKeyword2}{isinstance}(),
+  que se puede usar para determinar si un objeto es de un determinado
+  tipo de dato: 
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+x = 200
+print(isinstance(x, int)) 
+  \end{lstlisting}
+\end{frame}
+
 \begin{frame}[c]{Créditos}
   El material está basado en
   \href{https://www.w3schools.com/python/default.asp}{https://www.w3schools.com/python/default.asp}
