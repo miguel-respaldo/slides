@@ -263,6 +263,58 @@ x = memoryview(bytes(5))                     # memoryview
   \end{lstlisting}
 \end{frame}
 
+\section{Casting en Python}
+
+\begin{frame}[c]{Especificando el tipo de variable}
+
+  \vspace{\baselineskip}
+  Puede haber ocasiones en las que se desee especificar un tipo de dato en una
+  variable. Esto se puede hacer con el "\textbf{casting}". Python es un
+  lenguaje orientado a objetos y, como tal, usa clases para definir tipos de
+  datos, incluidos sus tipos primitivos.
+
+  \pausa
+  \vspace{\baselineskip}
+  Por lo tanto, la conversión (\textbf{casting}) en python se realiza
+  mediante funciones constructoras:
+
+  \vspace{\baselineskip}
+  \begin{description}
+    \item[int()] construye un número entero a partir de una literal entero,
+      una literal flotante (eliminando todos los decimales) o una literal
+      de cadena (siempre que la cadena represente un número entero).
+    \pausa
+    \item[float()] construye un número flotante a partir de una literal
+      entero, una literal flotante o una literal de cadena (siempre que la
+      cadena represente un número flotante o entero)
+    \pausa
+    \item[str()] construye una cadena a partir de una amplia variedad de
+      tipos de datos, incluidas cadenas, literales enteros y literales
+      flotantes
+  \end{description}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Especificando el tipo de variable}
+  \begin{lstlisting}[language=Python]
+  # Integers (enteros)
+  x = int(1)   # x sera 1
+  y = int(2.8) # y sera 2
+  z = int("3") # z sera 3
+
+  # Floats (enteros con decimales)
+  x = float(1)     # x sera 1.0
+  y = float(2.8)   # y sera 2.8
+  z = float("3")   # z sera 3.0
+  w = float("4.2") # w sera 4.2
+
+  # Strings (cadenas de texto)
+  x = str("s1") # x sera 's1'
+  y = str(2)    # y sera '2'
+  z = str(3.0)  # z sera '3.0'
+  \end{lstlisting}
+\end{frame}
+
 \begin{frame}[c]{Créditos}
   El material está basado en
   \href{https://www.w3schools.com/python/default.asp}{https://www.w3schools.com/python/default.asp}
