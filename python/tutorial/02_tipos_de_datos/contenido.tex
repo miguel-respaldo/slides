@@ -116,7 +116,7 @@ x = memoryview(bytes(5))                     # memoryview
   \end{lstlisting}
 \end{frame}
 
-\section{Números en Python}
+\section{Números}
 
 \begin{frame}[fragile]
   \frametitle{Números en Python}
@@ -268,7 +268,7 @@ x = memoryview(bytes(5))                     # memoryview
   \end{lstlisting}
 \end{frame}
 
-\section{Casting en Python}
+\section{Casting}
 
 \begin{frame}[c]{Especificando el tipo de variable}
 
@@ -480,7 +480,7 @@ print(miFuncion())
 
   \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
-def miFuncion() :
+def miFuncion():
   return True
 
 if miFuncion():
@@ -503,4 +503,209 @@ else:
 x = 200
 print(isinstance(x, int)) 
   \end{lstlisting}
+\end{frame}
+
+\section{Operadores}
+
+\begin{frame}[fragile]
+  \frametitle{Operadores en Python}
+
+  Los operadores son usados para realizar operaciones sobre las variables y
+  sus valores.
+
+  \vspace{\baselineskip}
+  En el ejemplo de abajo, se usa el operador \textbf{+} para hacer la suma
+  de dos valores:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  print(10 + 5)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[c]{Operadores en Python}
+  Python divide los operadores en los siguientes grupos:
+  \pausa
+  \begin{itemize}
+    \item Aritméticos
+    \pausa
+    \item Asignación
+    \pausa
+    \item Comparación
+    \pausa
+    \item Lógicos
+    \pausa
+    \item Identidad
+    \pausa
+    \item Pertenencia (\emph{Membership})
+    \pausa
+    \item A nivel de bits (\emph{Bitwise})
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Operadores Aritméticos}
+
+  Los operadores aritméticos son usados con valores numéricos para realizar
+  operaciones matemáticas comunes:
+
+  \begin{table}[]
+  \begin{tabular}{cll}
+    \textbf{Operador} &  \textbf{Nombre} & \textbf{Ejemplo} \\
+    \rowcolor{light-gray}
+    + & Adición        & $x + y$ \\
+    \pausa
+    - & Sustracción    & $x - y$ \pausa \\
+    \rowcolor{light-gray}
+    * & Multiplicación & $x * y$ \\
+    \pausa
+    / & División       & $x / y$ \pausa \\
+    \rowcolor{light-gray}
+    \% & Modulo        & $x \% y$ \\
+    \pausa
+    ** & Exponente     & $x ** y$ \pausa \\
+    \rowcolor{light-gray}
+    // & División entera & $x // y$ \\
+  \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}[c]{Operadores de Asignación}
+
+  \vspace{\baselineskip}
+  Los operadores de asignación son usados para asignar valores a las
+  variables:
+
+  \begin{table}[]
+  \begin{tabular}{cll}
+    \textbf{Operador} &  \textbf{Ejemplo} & \textbf{lo mismo que} \\
+    \rowcolor{light-gray}
+    =  & x = 5  & x = 5  \pausa \\
+    += & x += 3 & x = x + 3 \pausa \\
+    \rowcolor{light-gray}
+    -= & x -= 3 & x = x - 3 \pausa \\
+    *= & x *= 3 & x = x * 3 \pausa \\
+    \rowcolor{light-gray}
+    \%= & x \%= 3 & x = x \% 3 \pausa \\
+    //= & x //= 3 & x = x // 3 \pausa \\
+    \rowcolor{light-gray}
+    **= & x **= 3 & x = x ** 3 \pausa \\
+    \&= & x \&= 3 & x = x \& 3 \pausa \\
+    \rowcolor{light-gray}
+    \textbar= & x \textbar= 3 & x = x \textbar  3 \pausa \\
+    \^{}= & x \^{}= 3 & x = x \^{} 3 \pausa \\
+    \rowcolor{light-gray}
+    $>>=$ & $x >>= 3$ & $x = x >> 3$ \pausa \\
+    $<<=$ & $x <<= 3$ & $x = x << 3$ \\
+  \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}[c]{Operadores de Comparación}
+
+  Los operadores de comparación son usados para comparar dos valores:
+
+  \begin{table}[]
+  \begin{tabular}{cll}
+    \textbf{Operador} &  \textbf{Nombre} & \textbf{Ejemplo} \\
+    \rowcolor{light-gray}
+    ==  & Igual  & x == y  \pausa \\
+    !=  & No igual (Diferente)  & x != y  \pausa \\
+    \rowcolor{light-gray}
+     >  & Mayor que  & x > y  \pausa \\
+     <  & Menor que  & x < y  \pausa \\
+    \rowcolor{light-gray}
+    >=  & Mayor o igual que  & x >= y  \pausa \\
+    <=  & Menor o igual que  & x <= y  \\
+  \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}[c]{Operadores Lógicos}
+
+  Los operadores lógicos son usados para combinar sentencias condicionales:
+
+  \begin{table}[]
+  \begin{tabular}{cll}
+    \textbf{Operador} &  \textbf{Descripción} & \textbf{Ejemplo} \\
+    \rowcolor{light-gray}
+    and & Regresa Verdadero si ambas & calif > 5 and calif < 11  \\
+    \rowcolor{light-gray}
+        & sentencias son verdaderas  & \pausa \\
+    or  & Regresa Verdadero si una de &  calif < 6 or faltas > 6  \\
+        & las sentencias es verdadera & \pausa \\
+    \rowcolor{light-gray}
+    not & Revierte el resultado, & not(calif > 5 and calif < 11) \\
+    \rowcolor{light-gray}
+        & regresa Falso si el    & \\
+    \rowcolor{light-gray}
+        & resultado es verdadero & \\
+  \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}[c]{Operadores de Identidad}
+
+  Los operadores de identidad se utilizan para comparar los objetos,
+  no si son iguales, sino si en realidad son el mismo objeto, con la
+  misma ubicación de memoria:
+
+  \begin{table}[]
+  \begin{tabular}{cll}
+    \textbf{Operador} &  \textbf{Descripción} & \textbf{Ejemplo} \\
+    \rowcolor{light-gray}
+    is  & Regresa Verdadero si ambas & x is y  \\
+    \rowcolor{light-gray}
+        & variables son el mismo objeto  & \pausa \\
+    is not  & Regresa Verdadero si ambas &  x is not y \\
+        & variables No son el mismo objeto & \\
+  \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}[c]{Operadores de Pertenencia}
+
+  Los operadores de pertenencia se utilizan para probar si una secuencia
+  esta presente en un objeto:
+
+  \begin{table}[]
+  \begin{tabular}{cll}
+    \textbf{Operador} &  \textbf{Descripción} & \textbf{Ejemplo} \\
+    \rowcolor{light-gray}
+    in  & Regresa Verdadero si una secuencia & x in y  \\
+    \rowcolor{light-gray}
+        & con un valor especifico esta & \\
+    \rowcolor{light-gray}
+        & presente en el objeto & \pausa \\
+    not in  & Regresa Verdadero si una secuancia &  x not in y \\
+        & con un valor especifico No esta & \\
+        & presente en el objeto & \\
+  \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}[c]{Operadores a nivel de Bits (\emph{Bitwise})}
+
+  Los operadores bit a bit (\emph{Bitwise}) se utilizan para
+  comparar números a nivel binario:
+
+  \begin{table}[]
+  \begin{tabular}{cll}
+    \textbf{Operador} &  \textbf{Nombre} & \textbf{Descripción} \\
+    \rowcolor{light-gray}
+    \&  & AND & Establece cada bit en 1 si ambos bits son 1 \pausa \\
+    \textbar & OR & Establece cada bit en 1 si uno de los dos bits son 1 \pausa \\
+    \rowcolor{light-gray}
+    \^{} & XOR & Establece cada bit en 1 si sólo uno de los dos bits es 1 \pausa \\
+    ~ & NOT & Invierte todos los bits \pausa \\
+    \rowcolor{light-gray}
+    $<<$ & Desplazamiento & Desplaza a la izquierda agregando ceros \\
+    \rowcolor{light-gray}
+         & a la izquierda & a la derecha y deja que los bits más a \\
+    \rowcolor{light-gray}
+         &  & la izquierda se caigan/pierdan \pausa \\
+    $>>$ & Desplazamiento & Desplaza a la derecha poniendo copias del \\
+         & a la derecha &  bit más significativo a la izquierda y \\
+         & con signo & deja que los bits de la derecha se caigan/pierdan \\
+ \end{tabular}
+  \end{table}
 \end{frame}
