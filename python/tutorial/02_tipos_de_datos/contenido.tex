@@ -705,6 +705,22 @@ print(isinstance(x, int))
   \end{table}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Operadores a nivel de Bits (\emph{Bitwise})}
+
+  \begin{lstlisting}[language=Python]
+x = 22
+
+print("x      =       {:>6b}".format(x))
+print("x & 4  = {:>3d} = {:>6b}".format(x & 4, x & 4))
+print("x | 1  = {:>3d} = {:>6b}".format(x | 1, x | 1))
+print("x ^ 4  = {:>3d} = {:>6b}".format(x ^ 4, x ^ 4))
+print("~x     = {:>3d} = {:>6b}".format(~x , ~x))
+print("x << 1 = {:>3d} = {:>6b}".format(x << 1, x << 1))
+print("x >> 2 = {:>3d} = {:>6b}".format(x >> 1, x >> 1))
+  \end{lstlisting}
+\end{frame}
+
 \begin{frame}[c]{Créditos}
   El material está basado en
   \href{https://www.w3schools.com/python/default.asp}{https://www.w3schools.com/python/default.asp}
