@@ -696,7 +696,7 @@ print(isinstance(x, int))
     \textbar & OR & Establece cada bit en 1 si uno de los dos bits son 1 \pausa \\
     \rowcolor{light-gray}
     \^{} & XOR & Establece cada bit en 1 si sólo uno de los dos bits es 1 \pausa \\
-    ~ & NOT & Invierte todos los bits \pausa \\
+    \~{} & NOT & Invierte todos los bits \pausa \\
     \rowcolor{light-gray}
     $<<$ & Desplazamiento & Desplaza a la izquierda agregando ceros \\
     \rowcolor{light-gray}
@@ -708,4 +708,20 @@ print(isinstance(x, int))
          & con signo & deja que los bits de la derecha se caigan/pierdan \\
  \end{tabular}
   \end{table}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Operadores a nivel de Bits (\emph{Bitwise})}
+
+  \begin{lstlisting}[language=Python]
+x = 22
+
+print("x      =       {:>6b}".format(x))
+print("x & 4  = {:>3d} = {:>6b}".format(x & 4, x & 4))
+print("x | 1  = {:>3d} = {:>6b}".format(x | 1, x | 1))
+print("x ^ 4  = {:>3d} = {:>6b}".format(x ^ 4, x ^ 4))
+print("~x     = {:>3d} = {:>6b}".format(~x , ~x))
+print("x << 1 = {:>3d} = {:>6b}".format(x << 1, x << 1))
+print("x >> 2 = {:>3d} = {:>6b}".format(x >> 1, x >> 1))
+  \end{lstlisting}
 \end{frame}
