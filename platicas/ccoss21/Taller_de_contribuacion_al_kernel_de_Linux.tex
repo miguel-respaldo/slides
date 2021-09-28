@@ -3,11 +3,13 @@
 \documentclass[aspectratio=169]{beamer}
 
 \usetheme{Boadilla}
-\usecolortheme{seagull}
+
+\definecolor{ccosscolor}{rgb}{0.0, 0.545, 0.545}
+\usecolortheme[named=ccosscolor]{structure}
 
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides
 
-\graphicspath{{../../img/}}
+\graphicspath{{../img/}}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
 \usepackage{graphicx} % Allows including images
@@ -23,6 +25,9 @@ Cumbre de Contribuidores de Open Source Software
 \date{
   7 de Octubre de 2021
 } 
+
+\logo{\includegraphics[height=0.5cm]{logo-ccoss.png}}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
 
 %New colors defined below
 \definecolor{codeBakground}{rgb}{0.95,0.95,0.92}
