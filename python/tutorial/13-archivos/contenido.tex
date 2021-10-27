@@ -181,7 +181,7 @@
 
   \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
-  f = open("demofile.txt", "r")
+  f = open("demo.txt", "r")
   for x in f:
       print(x)
   \end{lstlisting}
@@ -195,7 +195,7 @@
 
   \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
-  f = open("demofile.txt", "r")
+  f = open("demo.txt", "r")
   print(f.readline())
   f.close()
   \end{lstlisting}
@@ -254,7 +254,102 @@
   f.close()
 
   #abrir y leer el archivo despues de agregar contenido
-  f = open("demofile3.txt", "r")
+  f = open("demo.txt", "r")
   print(f.read())
   \end{lstlisting}
+
+  \vspace{\baselineskip}
+  \begin{alertblock}{Nota}
+    Usando "w" en open() sobreescribirá el archivo entero.
+  \end{alertblock}
+\end{frame}
+
+
+\begin{frame}[c]{Crear un archivo nuevo}
+
+  Para crear un nuevo archivo en Python, use el método
+  \textcolor{codeKeyword2}{open}(),
+  con uno de los siguientes parámetros:
+
+  \vspace{\baselineskip}
+  \begin{description}
+    \item[x] Crear - creará un archivo, devuelve un error si el archivo existe
+    \pausa
+    \item[a] Adjuntar - creará un archivo si el archivo especificado no
+      existe, y agrega al final el nuevo contenido.
+    \pausa
+    \item[w] Escritura - creará un archivo si el archivo especificado no
+      existe, y borra todo su contenido.
+  \end{description}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ejemplos}
+
+  Creando un archivo llamado ejemplo.txt:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  f = open("ejemplo.txt", "x")
+  \end{lstlisting}
+
+  \vspace{\baselineskip}
+  Creando un nuevo archivo llamado ejemplo.txt si no existe:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  f = open("ejemplo.txt", "w")
+  \end{lstlisting}
+
+\end{frame}
+
+\section{Borrando archivos}
+
+\begin{frame}[fragile]
+  \frametitle{Borrando un archivo}
+
+  Para eliminar un archivo, debe importar el módulo del sistema operativo
+  y ejecutar su función \textbf{os.remove}():
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  import os
+
+  os.remove("ejemplo.txt")
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Verificando si existe el archivo}
+
+  Para evitar un error, es posible que desee verificar si el archivo
+  existe antes de intentar eliminarlo:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  import os
+
+  if os.path.exists("demo.txt"):
+      os.remove("demo.txt")
+  else:
+      print("El archvo demo.txt no existe ")
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Borrando directorios/carpetas}
+
+  Para eliminar una carpeta completa, use el método \textbf{os.rmdir}():
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  import os
+
+  os.rmdir("una-carpeta")
+  \end{lstlisting}
+
+  \vspace{\baselineskip}
+  \begin{exampleblock}{Nota}
+    Solo se pueden eliminar carpetas/directorios vacíos
+  \end{exampleblock}
 \end{frame}
