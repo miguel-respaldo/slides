@@ -146,6 +146,8 @@
     \item prevenir la ejecución de código de pruebas.
   \end{itemize}
 
+  \pausa
+  \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
 # Este es un comentario
 # y otro comentario
@@ -161,6 +163,61 @@ de una sola linea
 """
   \end{lstlisting}
 \end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Sangría de Python}
+
+  \vspace{\baselineskip}
+  La \textbf{sangría} (indentado) se refiere a los espacios al comienzo
+  de una línea de código.
+
+  \vspace{\baselineskip}
+  Mientras que en otros lenguajes de programación la sangría en el código
+  es solo para legibilidad, \underline{la sangría en Python es muy
+  importante}.
+
+  \vspace{\baselineskip}
+  Python usa sangría para indicar un bloque de código.
+  \begin{lstlisting}[language=Python]
+  if 5 > 2:
+      print("Cinco es mas grande que dos!")
+  \end{lstlisting}
+
+  Python le dará un error si omite la sangría:
+  \begin{lstlisting}[language=Python]
+  if 5 > 2:
+  print("Cinco es mas grande que dos!")
+  \end{lstlisting}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Sangría de Python}
+
+  \vspace{\baselineskip}
+  El número de espacios depende de usted como programador,
+  pero debe ser al menos uno.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  if 5 > 2:
+   print("Cinco es mas grande que dos!")
+  if 5 > 2:
+        print("Cinco es mas grande que dos!")
+  \end{lstlisting}
+
+  Tienes que usar la misma cantidad de espacios en el mismo bloque
+  de código, de lo contrario Python te dará un error:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  if 5 > 2:
+   print("Cinco es mas grande que dos!")
+        print("Cinco es mas grande que dos!")
+  \end{lstlisting}
+\end{frame}
+
 
 \section{Variables}
 
