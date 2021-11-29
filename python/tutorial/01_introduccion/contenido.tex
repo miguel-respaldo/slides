@@ -1,9 +1,5 @@
 % ex: ts=2 sw=2 sts=2 et filetype=tex
 % SPDX-License-Identifier: CC-BY-SA-4.0
-\begin{frame}
-    \frametitle{Contenido}
-    \tableofcontents
-\end{frame}
 
 \section{Introducción a Python}
 
@@ -150,6 +146,8 @@
     \item prevenir la ejecución de código de pruebas.
   \end{itemize}
 
+  \pausa
+  \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
 # Este es un comentario
 # y otro comentario
@@ -165,6 +163,61 @@ de una sola linea
 """
   \end{lstlisting}
 \end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Sangría de Python}
+
+  \vspace{\baselineskip}
+  La \textbf{sangría} (indentado) se refiere a los espacios al comienzo
+  de una línea de código.
+
+  \vspace{\baselineskip}
+  Mientras que en otros lenguajes de programación la sangría en el código
+  es solo para legibilidad, \underline{la sangría en Python es muy
+  importante}.
+
+  \vspace{\baselineskip}
+  Python usa sangría para indicar un bloque de código.
+  \begin{lstlisting}[language=Python]
+  if 5 > 2:
+      print("Cinco es mas grande que dos!")
+  \end{lstlisting}
+
+  Python le dará un error si omite la sangría:
+  \begin{lstlisting}[language=Python]
+  if 5 > 2:
+  print("Cinco es mas grande que dos!")
+  \end{lstlisting}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Sangría de Python}
+
+  \vspace{\baselineskip}
+  El número de espacios depende de usted como programador,
+  pero debe ser al menos uno.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  if 5 > 2:
+   print("Cinco es mas grande que dos!")
+  if 5 > 2:
+        print("Cinco es mas grande que dos!")
+  \end{lstlisting}
+
+  Tienes que usar la misma cantidad de espacios en el mismo bloque
+  de código, de lo contrario Python te dará un error:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  if 5 > 2:
+   print("Cinco es mas grande que dos!")
+        print("Cinco es mas grande que dos!")
+  \end{lstlisting}
+\end{frame}
+
 
 \section{Variables}
 
@@ -224,7 +277,7 @@ print(y)
 
   \vspace{\baselineskip}
   Las variables pueden tener un nombre corto (como \textit{x} y \textit{y})
-  o tener un nombre más \textbf{descriptivo} (\textit{edad}, \textit{nombre} 
+  o tener un nombre más \textbf{descriptivo} (\textit{edad}, \textit{nombre},
   \textit{volumen\_total}). Las reglas para las variables en Python son:
   \pausa
 
@@ -338,6 +391,19 @@ print(y)
 x = "increible"
 print("Python es " + x)
   \end{lstlisting}
+
+  \pausa
+  Para combinar cualquier tipo de variable se usa una coma "\textbf{,}" y
+  esta forma de salida agrega un espacio en blanco entre la salida de cada
+  variable.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+x = "increible"
+print("Python es", x)
+  \end{lstlisting}
+
+
 \end{frame}
 
 \begin{frame}[fragile]
@@ -361,11 +427,21 @@ print(x + y)
     Si se combina una cadena de texto con un número, Python dará un error.
   \end{alertblock}
 
-  \vspace{\baselineskip}
   \begin{lstlisting}[language=Python]
 x = 5
 y = "Juan"
 print(x + y)
+  \end{lstlisting}
+
+  \pausa
+  \begin{exampleblock}{}
+    Se puede usar la coma para evitar que nos de error.
+  \end{exampleblock}
+
+  \begin{lstlisting}[language=Python]
+x = 5
+y = "Juan"
+print(x, y)
   \end{lstlisting}
 \end{frame}
 
@@ -452,9 +528,4 @@ unaFuncion()
 
 print("Python es " + x)
   \end{lstlisting}
-\end{frame}
-
-\begin{frame}[c]{Créditos}
-  El material está basado en
-  \href{https://www.w3schools.com/python/default.asp}{https://www.w3schools.com/python/default.asp}
 \end{frame}

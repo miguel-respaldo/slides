@@ -1,0 +1,374 @@
+% ex: ts=2 sw=2 sts=2 et filetype=tex
+% SPDX-License-Identifier: CC-BY-SA-4.0
+
+\section{Cadenas ("\emph{Strings}")}
+
+\begin{frame}[fragile]
+  \frametitle{Cadenas de texto}
+
+  Las cadenas en Python están rodeadas por comillas simples o comillas dobles.
+
+  \vspace{\baselineskip}
+  \textbf{'hola'} es lo mismo que \textbf{"hola"}.
+
+  \vspace{\baselineskip}
+  Se puede mostrar una cadena literal con la función
+  \textcolor{codeKeyword}{print}():
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  print("Hola")
+  print('Hola')
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Asignar una cadena a una variable}
+
+  La asignación de una cadena a una variable se realiza con el nombre de
+  la variable seguido de un signo igual y la cadena:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  a = "Hola"
+  print(a)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Asignar una cadena a una variable}
+
+  Puede asignar una cadena de varias líneas a una variable
+  utilizando tres comillas:
+
+  \begin{lstlisting}[language=Python]
+a = """Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."""
+print(a) 
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Asignar una cadena a una variable}
+
+  O tres comillas simples: 
+
+  \begin{lstlisting}[language=Python]
+a = '''Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.'''
+print(a) 
+  \end{lstlisting}
+
+  \begin{alertblock}{Nota}
+    en el resultado, los saltos de línea se insertan en la misma
+    posición que en el código.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Asignar una cadena a una variable}
+
+  Como muchos otros lenguajes de programación populares, las cadenas
+  en Python son arreglos de bytes que representan caracteres Unicode.
+
+  \vspace{\baselineskip}
+  Sin embargo, Python no tiene un tipo de datos de carácter, un solo
+  carácter es simplemente una cadena con una longitud de 1.
+
+  \vspace{\baselineskip}
+  Se pueden usar corchetes para acceder a elementos de la cadena. 
+
+  \begin{lstlisting}[language=Python]
+  a = "Hola Mundo"
+  #    0123456789
+  print(a[1])
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Recorriendo una cadena}
+
+  Dado que las cadenas son arreglos, podemos recorrer los caracteres
+  de una cadena, con un bucle \textcolor{codeKeyword}{for}.
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  for x in "manzana":
+    print(x)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Longitud de una cadena}
+
+  Para obtener la longitud de una cadena, se usa la función 
+  \textcolor{codeKeyword}{len}().
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  a = "Hola Mundo!"
+  print(len(a))
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Comprobando cadenas}
+
+  Para comprobar si una determinada frase o carácter está presente
+  en una cadena, podemos usar la palabra clave
+  \textcolor{codeKeyword}{in}.
+
+  \begin{lstlisting}[language=Python]
+  txt= "Las mejores cosas en la vida son gratis!"
+  print("gratis" in txt)
+  \end{lstlisting}
+
+  \pausa
+  Se puede usar con la sentencia \textcolor{codeKeyword}{if}:
+
+  \begin{lstlisting}[language=Python]
+  txt= "Las mejores cosas en la vida son gratis!"
+  if "free" in txt:
+    print("Si, 'gratis' esta en la cadena.")
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Comprobando cadenas}
+
+  Para comprobar si una determinada frase o carácter \textbf{no} 
+  está presente en una cadena, podemos usar la palabra clave
+  \textcolor{codeKeyword}{not in}.
+
+  \begin{lstlisting}[language=Python]
+  txt= "Las mejores cosas en la vida son gratis!"
+  print("costoso" not in txt)
+  \end{lstlisting}
+
+  \pausa
+  Se puede usar con la sentencia \textcolor{codeKeyword}{if}:
+
+  \begin{lstlisting}[language=Python]
+  txt= "Las mejores cosas en la vida son gratis!"
+  if "costoso" not in txt:
+    print("No, 'costoso' NO esta en la cadena.")
+  \end{lstlisting}
+\end{frame}
+
+
+\section{Subcadenas}
+
+\begin{frame}[fragile]
+  \frametitle{Subcadenas}
+
+  Puede devolver un rango de caracteres utilizando la sintaxis de
+  corte/intervalo.
+
+  \vspace{\baselineskip}
+  Especifique el índice inicial y el índice final, separados por dos puntos,
+  para devolver una parte de la cadena. 
+
+  \vspace{\baselineskip}
+  Ejemplo: Obtener los caracteres de la posición 2 a la posición 5 (no incluida):
+  \begin{lstlisting}[language=Python]
+  b = "Hola Mundo!"
+  print(b[2:5])
+  \end{lstlisting}
+
+  \begin{exampleblock}{Nota}
+    El primer caracter de una cadena tiene indice 0
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Subcadena desde el principio}
+
+  Al omitir el índice de inicio, el rango comenzará en el primer carácter:
+
+  \vspace{\baselineskip}
+  Ejemplo: Obtener los caracteres desde el principio hasta la posición 5 (no incluida):
+  \begin{lstlisting}[language=Python]
+  b = "Hola Mundo!"
+  print(b[:5])
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Subcadena hasta el final}
+
+  Al omitir el índice final, el rango llegará al final:
+
+  \vspace{\baselineskip}
+  Ejemplo: Obtener los caracteres de la posición 2 hasta el final:
+  \begin{lstlisting}[language=Python]
+  b = "Hola Mundo!"
+  print(b[2:])
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Indices negativos}
+
+  Use índices negativos para comenzar el segmento desde el final de la cadena:
+  \vspace{\baselineskip}
+  Ejemplo: Obtener los caracteres de la posición -5 hasta la posición -2 (no
+  incluida)
+  \begin{lstlisting}[language=Python]
+  b = "Hola Mundo!"
+  print(b[-5:-2])
+  \end{lstlisting}
+\end{frame}
+
+
+\section{Modificando cadenas}
+
+\begin{frame}[fragile]
+  \frametitle{Mayúsculas}
+
+  Python tiene un conjunto de métodos integrados que puede usar en cadenas.
+
+  \vspace{\baselineskip}
+  Ejemplo: El método \textcolor{codeKeyword}{upper}() devuelve la
+  cadena en mayúsculas: 
+  \begin{lstlisting}[language=Python]
+  a = "Hola Mundo!"
+  print(a.upper())
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Minúsculas}
+
+  El método \textcolor{codeKeyword}{lower}() devuelve la
+  cadena en minúsculas: 
+
+  \begin{lstlisting}[language=Python]
+  a = "Hola Mundo!"
+  print(a.lower())
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Quitando los espacios en blanco}
+
+  El espacio en blanco es el espacio antes y/o después del texto real,
+  y muy a menudo se desea eliminar este espacio.
+
+  \vspace{\baselineskip}
+  El método \textcolor{codeKeyword}{strip}() quita cualquier espacio en
+  blanco al principio y al final de la cadena:
+
+  \begin{lstlisting}[language=Python]
+  a = "  Hola Mundo!  "
+  print(a.strip()) # regresa "Hola Mundo!"
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Remplazando cadenas}
+
+  El método \textcolor{codeKeyword}{replace}() remplaza una cadena por otra:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  a = "Hola Mundo!"
+  print(a.replace("H","L"))
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Dividiendo cadenas}
+
+  El método \textcolor{codeKeyword}{split}() devuelve una lista donde
+  el texto entre el separador especificado se convierte en los elementos
+  de la lista.
+
+  \vspace{\baselineskip}
+  El método \textcolor{codeKeyword}{split}() divide la cadena en
+  subcadenas si encuentra instancias del separador:
+  \begin{lstlisting}[language=Python]
+  a = "Hola,Mundo"
+  print(a.split(","))
+  \end{lstlisting}
+\end{frame}
+
+
+\section{Concatenación}
+
+\begin{frame}[fragile]
+  \frametitle{Concatenación}
+
+  Para concatenar o combinar dos cadenas, puede usar el operador +.
+
+  \begin{lstlisting}[language=Python]
+  a = "Hola"
+  b = "Mundo"
+  c = a + b
+  print(c)
+  c = a +  " " + b
+  print(c)
+  \end{lstlisting}
+\end{frame}
+
+
+\section{Caracteres especiales}
+
+\begin{frame}[fragile]
+  \frametitle{Caracteres de escape}
+
+  Para insertar caracteres que son ilegales en una cadena se
+  usa un carácter de escape.
+
+  \vspace{\baselineskip}
+  Un carácter de escape es una diagonal invertida \textbackslash seguida del
+  carácter que desea insertar.
+
+  \vspace{\baselineskip}
+  Un ejemplo de un carácter ilegal es una comilla doble dentro
+  de una cadena que está rodeada por comillas dobles: 
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  txt = "El se hace llamar "Hackerman", porque le gustan las computadoras"
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Caracteres de escape}
+
+  Para arreglar este problema se usa el carácter especial \textbackslash"
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Python]
+  txt = "El se hace llamar \"Hackerman\", porque le gustan las computadoras"
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[c]{Caracteres de escape}
+
+  Otros caracteres de escape usados en Python son:
+
+  \begin{table}[]
+  \begin{tabular}{cl}
+    \textbf{Código} &  \textbf{Resultado} \\
+    \rowcolor{light-gray}
+    \textbackslash'  & Comilla simple \pausa \\
+    \textbackslash\textbackslash  & Diagonal invertida \pausa \\
+    \rowcolor{light-gray}
+    \textbackslash{n}  & Nueva linea \pausa \\
+    \textbackslash{r}  & Retorno de carro \pausa \\
+    \rowcolor{light-gray}
+    \textbackslash{t}  & Tabulador \pausa \\
+    \textbackslash{b}  & "Backspace" \pausa \\
+    \rowcolor{light-gray}
+    \textbackslash{f}  & "From Feed" \pausa \\
+    \textbackslash{ooo}  & Valor octal \pausa \\
+    \rowcolor{light-gray}
+    \textbackslash{xhh}  & Valor hexadecimal \\
+ \end{tabular}
+  \end{table}
+\end{frame}
