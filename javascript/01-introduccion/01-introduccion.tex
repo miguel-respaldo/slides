@@ -62,6 +62,7 @@
   morecomment=[s]{<!-}{-->},
   tag=[s],
   otherkeywords={
+  %morekeywords={
   % General
   >,
   % Standard tags
@@ -78,9 +79,12 @@
   % More tags...
   <canvas, /canvas>, <svg, <rect, <animateTransform, </rect>, </svg>,
   <video, <source, <iframe, </iframe>, </video>, <image, </image>, <header,
-  </header, <article, </article, <button, <h1, </h1, <h2, </h2
+  </header, <article, </article, <button, </button, <h1, </h1, <h2, </h2,
+  <img
   },
   ndkeywords={
+  %morendkeywords={
+  %morekeywords=[2]{
   % General
   =,
   % HTML attributes
@@ -114,6 +118,7 @@
   % Code design
   identifierstyle=\color{black},
   keywordstyle=\color{blue}\bfseries,
+  %keywordstyle={[2]\color{editorGreen}},
   ndkeywordstyle=\color{editorGreen}\bfseries,
   stringstyle=\color{editorOcher}\ttfamily,
   commentstyle=\color{brown}\ttfamily,

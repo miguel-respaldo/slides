@@ -168,17 +168,32 @@
      document.getElementById("demo").innerHTML = "Hola JavaScript";
   \end{exampleblock}
 
-  \vspace{\baselineskip}
-  \begin{alertblock}{Nota:}
-    JavaScript acepta comillas simples o dobles para las cadenas de texto.
-  \end{alertblock}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{Ejemplo 1}
-  %\begin{lstlisting}[language=Python]
-  %\begin{lstlisting}[style=htmlcssjs]
-  %\begin{lstlisting}
-  %\end{lstlisting}
   \lstinputlisting[language=Python]{ejemplo01.html}
+\end{frame}
+
+\begin{frame}[c]{JavaScript puede cambiar el contenido HTML}
+
+  \vspace{\baselineskip}
+  \begin{alertblock}{Nota:}
+    JavaScript acepta comillas simples o dobles para las cadenas de texto.
+  \end{alertblock}
+
+  \vspace{\baselineskip}
+  \begin{exampleblock}{Ejemplo:}
+     document.getElementById('demo').innerHTML = 'Hola JavaScript';
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ejemplo 2 (comillas)}
+  \lstinputlisting[language=Python]{ejemplo02.html}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{JavaScript puede cambiar los valores de los atributos HTML}
+  \lstinputlisting[language=Python]{ejemplo03.html}
 \end{frame}
