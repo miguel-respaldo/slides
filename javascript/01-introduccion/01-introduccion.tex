@@ -28,6 +28,7 @@
 \definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
 \definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
 \definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
+\definecolor{codeNumbers}{rgb}{0.5,0.5,0.5}
 \definecolor{brown}{rgb}{0.69,0.31,0.31}
 
 % CSS
@@ -100,6 +101,7 @@
   % General design
   backgroundcolor=\color{editorGray},
   basicstyle={\footnotesize\ttfamily},
+  %inputencoding=utf8,
   %frame=b,
   % line-numbers
   numberstyle=\tiny\color{codeNumbers},
@@ -127,12 +129,9 @@
   breaklines=true,
   % Español
   literate=%
-  {á}{{\'a}}1
-  {é}{{\'e}}1
-  {í}{{\'i}}1
-  {ó}{{\'o}}1
-  {ú}{{\'u}}1
-  {ñ}{{\~n}}1
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {¡}{{!`}}1 {¿}{{?`}}1
 }
 
 % Code listing set
