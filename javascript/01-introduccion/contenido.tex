@@ -172,7 +172,7 @@
 
 \begin{frame}[fragile]
   \frametitle{Ejemplo 1}
-  \lstinputlisting[language=Python]{ejemplo01.html}
+  \lstinputlisting{ejemplo01.html}
 \end{frame}
 
 \begin{frame}[c]{JavaScript puede cambiar el contenido HTML}
@@ -190,10 +190,56 @@
 
 \begin{frame}[fragile]
   \frametitle{Ejemplo 2 (comillas)}
-  \lstinputlisting[language=Python]{ejemplo02.html}
+  \lstinputlisting{ejemplo02.html}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{JavaScript puede cambiar los valores de los atributos HTML}
-  \lstinputlisting[language=Python]{ejemplo03.html}
+  \lstinputlisting{ejemplo03.html}
+\end{frame}
+
+\begin{frame}[c]{JavaScript puede cambiar los estilos HTML (CSS)}
+
+  Cambiar el estilo de un elemento HTML es una variante de cambiar un atributo HTML:
+
+  \vspace{\baselineskip}
+  \begin{exampleblock}{Ejemplo:}
+    document.getElementById("demo").style.fontSize = "35px";
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ejemplo 4}
+  \lstinputlisting{ejemplo04.html}
+\end{frame}
+
+\begin{frame}[c]{JavaScript puede ocultar elementos HTML}
+
+  Se pueden ocultar elementos HTML cambiando el estilo de visualización:
+
+  \vspace{\baselineskip}
+  \begin{exampleblock}{Ejemplo:}
+    document.getElementById("demo").style.display = "none"; 
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ejemplo 5}
+  \lstinputlisting{ejemplo05.html}
+\end{frame}
+
+\begin{frame}[c]{JavaScript puede mostrar elementos HTML}
+
+  También se pueden mostrar elementos HTML ocultos cambiando el estilo
+  de visualización: 
+
+  \vspace{\baselineskip}
+  \begin{exampleblock}{Ejemplo:}
+    document.getElementById("demo").style.display = "block";
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Ejemplo 6}
+  \lstinputlisting{ejemplo06.html}
 \end{frame}
