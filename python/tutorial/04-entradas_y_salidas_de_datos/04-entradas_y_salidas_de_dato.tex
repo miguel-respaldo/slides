@@ -3,10 +3,11 @@
 \documentclass[aspectratio=169]{beamer}
 
 \usetheme{Boadilla}
+\usecolortheme{beaver}
 
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides
 
-\graphicspath{{../../img/}}
+\graphicspath{{../../img/}{../../../styles/cbtis246/}}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
 \usepackage{graphicx} % Allows including images
@@ -14,16 +15,21 @@
 
 \title{Entrada y Salida de datos de usuario} % The short title appears at the bottom of every slide,
                                                % the full title is only on the title page
-\author{Miguel Bernal Marin} % Your name
-\institute[Escuela] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\author{Yolanda Alejo Huerta} % Your name
+\institute[CBTIS 246] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
- Nombre de la Institución\\% Your institution for the title page
+ Centro de Bachillerato Tecnológico\\% Your institution for the title page
+ Industrial y de Servicios 246 \\
+ El Amo Torres \\
 \medskip
-\textit{correo} % Your email address
+\textit{yolanda.alejo@cbtis-246.edu.mx}
 }
 \date{
-    \today
+  7 de Marzo de 2022
 } % Date, can be changed to a custom date
+
+\logo{\includegraphics[height=1.5cm]{dgeti.png}}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
 
 %New colors defined below
 \definecolor{codeBakground}{rgb}{0.95,0.95,0.92}
@@ -64,8 +70,20 @@
 %"mystyle" code listing set
 \lstset{style=mystyle}
 
-\newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
-%\newcommand{\pausa}{}      % Para que NO salgan las pausas
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the
+%beginning of each section and highlights the current section:
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Contenido}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+%------------------------------------------------------------
+
+%\newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
+\newcommand{\pausa}{}      % Para que NO salgan las pausas
 
 \begin{document}
 

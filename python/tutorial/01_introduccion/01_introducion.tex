@@ -69,6 +69,18 @@
 %"mystyle" code listing set
 \lstset{style=mystyle}
 
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the
+%beginning of each section and highlights the current section:
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Contenido}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+%------------------------------------------------------------
+
 %\newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
 \newcommand{\pausa}{}      % Para que NO salgan las pausas
 
