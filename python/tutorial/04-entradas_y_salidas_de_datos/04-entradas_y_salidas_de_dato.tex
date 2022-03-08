@@ -14,6 +14,7 @@
 \usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
 \usepackage{graphicx} % Allows including images
 \usepackage{listings}
+\usepackage{colortbl}
 
 \title{Entrada y Salida de datos de usuario} % The short title appears at the bottom of every slide,
                                                % the full title is only on the title page
@@ -72,6 +73,18 @@
 %"mystyle" code listing set
 \lstset{style=mystyle}
 
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the
+%beginning of each section and highlights the current section:
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Contenido}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+%------------------------------------------------------------
+
 \newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
 %\newcommand{\pausa}{}      % Para que NO salgan las pausas
 
@@ -91,7 +104,7 @@
 {\nologo
 \begin{frame}[c]{Créditos}
   \begin{center}
-    \includegraphics[height=3cm]{tecmm-logo.png}
+    \includegraphics[height=3cm]{tecmm-z-logo.png}
   \end{center}
   \vspace{\baselineskip}
   El material está basado en

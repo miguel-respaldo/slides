@@ -6,7 +6,10 @@
 
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides
 
-\graphicspath{{../../img/}}
+\graphicspath{{../../img/}{../../../styles/tecmm/}}
+% use the command "usepackage" instead of "usecolortheme" to use the path to styles
+\usepackage{../../../styles/tecmm/beamercolorthemetecmm2}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
 \usepackage{graphicx} % Allows including images
@@ -16,15 +19,20 @@
 \title{Tipos de datos en Python} % The short title appears at the bottom of every slide,
                                                % the full title is only on the title page
 \author{Miguel Bernal Marin} % Your name
-\institute[Escuela] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\institute[TecMM Zapopan] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
- Nombre de la Institución\\% Your institution for the title page
+ Instituto Tecnológico\\
+ José Mario Molina\\
+ Pasquel y Henríquez\\% Your institution for the title page
 \medskip
-\textit{correo} % Your email address
+\textit{miguel.bernal@zapopan.tecmm.edu.mx} % Your email address
 }
 \date{
-    \today
+    8 de Marzo de 2022
 } % Date, can be changed to a custom date
+
+\logo{\includegraphics[height=1.5cm]{tecmm-logo.png}}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
 
 %New colors defined below
 \definecolor{codeBakground}{rgb}{0.95,0.95,0.92}
@@ -65,6 +73,18 @@
 %"mystyle" code listing set
 \lstset{style=mystyle}
 
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the
+%beginning of each section and highlights the current section:
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Contenido}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+%------------------------------------------------------------
+
 \newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
 %\newcommand{\pausa}{}      % Para que NO salgan las pausas
 
@@ -81,9 +101,15 @@
 
 \input{contenido.tex}
 
+{\nologo
 \begin{frame}[c]{Créditos}
+  \begin{center}
+    \includegraphics[height=3cm]{tecmm-z-logo.png}
+  \end{center}
+  \vspace{\baselineskip}
   El material está basado en
   \href{https://www.w3schools.com/python/default.asp}{https://www.w3schools.com/python/default.asp}
 \end{frame}
+}
 
 \end{document}
