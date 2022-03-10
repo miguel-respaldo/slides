@@ -3,41 +3,33 @@
 \documentclass[aspectratio=169]{beamer}
 
 \usetheme{Boadilla}
-\usecolortheme{beaver}
 
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides
 
-\graphicspath{{../img/}{../../styles/cbtis246/}}
+\graphicspath{{../img/}}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
 \usepackage{graphicx} % Allows including images
 \usepackage{listings}
-\usepackage{colortbl}
 
-\title{Introducción a HTML} % The short title appears at the bottom of every slide,
-                            % the full title is only on the title page
-\author{Yolanda Alejo Huerta} % Your name
-\institute[CBTIS 246] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\title{Sentencias a JavaScript} % The short title appears at the bottom of every slide,
+                                               % the full title is only on the title page
+\author{Miguel Bernal Marin} % Your name
+\institute[Escuela] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
- Centro de Bachillerato Tecnológico\\% Your institution for the title page
- Industrial y de Servicios 246 \\
- El Amo Torres \\
+ Nombre de la Institución\\% Your institution for the title page
 \medskip
-\textit{yolanda.alejo@cbtis-246.edu.mx}
+\textit{correo} % Your email address
 }
 \date{
-  9 de Marzo de 2022
+    \today
 } % Date, can be changed to a custom date
-
-\logo{\includegraphics[height=1.5cm]{dgeti.png}}
-\newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
 
 \definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
 \definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
 \definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
 \definecolor{codeNumbers}{rgb}{0.5,0.5,0.5}
 \definecolor{brown}{rgb}{0.69,0.31,0.31}
-\definecolor{light-gray}{gray}{0.90}
 
 % CSS
 \lstdefinelanguage{CSS}{
@@ -88,8 +80,7 @@
   <canvas, /canvas>, <svg, <rect, <animateTransform, </rect>, </svg>,
   <video, <source, <iframe, </iframe>, </video>, <image, </image>, <header,
   </header, <article, </article, <button, </button, <h1, </h1, <h2, </h2,
-  <h3, </h3, <a, </a,
-  <img, <br
+  <img
   },
   ndkeywords={
   %morendkeywords={
@@ -98,7 +89,7 @@
   =,
   % HTML attributes
   charset=, src=, id=, width=, height=, style=, type=, rel=, href=,
-  onclick=, alt=,
+  onclick=,
   % SVG attributes
   fill=, attributeName=, begin=, dur=, from=, to=, poster=, controls=, x=, y=, repeatCount=, xlink:href=,
   % properties
@@ -151,20 +142,8 @@
 % Code listing set
 \lstset{style=htmlcssjs}
 
-%------------------------------------------------------------
-%The next block of commands puts the table of contents at the
-%beginning of each section and highlights the current section:
-\AtBeginSection[]
-{
-  \begin{frame}
-    \frametitle{Contenido}
-    \tableofcontents[currentsection]
-  \end{frame}
-}
-%------------------------------------------------------------
-
-%\newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
-\newcommand{\pausa}{}      % Para que NO salgan las pausas
+\newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
+%\newcommand{\pausa}{}      % Para que NO salgan las pausas
 
 \begin{document}
 
@@ -182,7 +161,7 @@
 \begin{frame}[c]{Créditos}
   El material está basado en
   \begin{itemize}
-    \item \href{https://www.w3schools.com/html/default.asp}{https://www.w3schools.com/html/default.asp}
+    \item \href{https://www.w3schools.com/js/default.asp}{https://www.w3schools.com/js/default.asp}
   \end{itemize}
 \end{frame}
 
