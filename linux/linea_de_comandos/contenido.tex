@@ -1,0 +1,291 @@
+% ex: ts=2 sw=2 sts=2 et filetype=tex
+% SPDX-License-Identifier: CC-BY-SA-4.0
+
+\section{La filosofía de las herramientas de Unix}
+
+\begin{frame}[c]{La filosofía de las herramientas de Unix}
+  \begin{itemize}
+    \item Una herramienta es un programa simple, generalmente diseñado para un
+      propósito específico, a veces se le denomina como un comando.
+
+    \pausa
+    \item La filosofía de herramientas de Unix, surge durante la creación del
+      sistema operativo UNIX, después de la revolucionaria invención del
+      tubo (o tubería) '|'.
+
+    \pausa
+    \item La tubería permitía enviar la \textbf{salida} de un programa a la
+      \textbf{entrada} de otro. La filosofía de las herramientas era tener
+      \textbf{pequeños programas} para realizar una \textbf{tarea
+      particular} en lugar de tratar de desarrollar grandes
+      programas monolíticos para realizar una gran cantidad de tareas.
+
+      Para realizar tareas más complejas, las herramientas simplemente se
+      conectarían entre sí mediante tuberías.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{La filosofía de las herramientas de Unix}
+  \begin{itemize}
+    \item Todas las herramientas básicas del sistema UNIX se diseñaron para
+      que pudieran operar juntas. Los editores originales basados en texto (e
+      incluso TeX y LaTeX) usaban ASCII y ahora usan UTF-8 y puede usar
+      herramientas como: \textbf{sed, awk, vi, grep, cat, more, tr} y
+      varias otras herramientas basadas en texto junto con estos editores.
+
+    \pausa
+    \item Usando esta filosofía, los programadores evitaron escribir un
+      programa (dentro de su programa más grande) que ya había sido escrito
+      por otra persona (esto podría considerarse una forma de reciclaje de
+      código). Por ejemplo, varias aplicaciones diferentes utilizan los
+      correctores ortográficos de la línea de comandos en lugar de que cada
+      aplicación cree su propio corrector ortográfico.
+
+    \pausa
+    \item Esta filosofía vive hoy en GNU/Linux y varios otros sistemas
+      operativos basados en el sistema UNIX (FreeBSD, NetBSD, OpenBSD, etc.).
+  \end{itemize}
+\end{frame}
+
+\section{Manuales y Ayuda}
+
+\begin{frame}[c]{Comando man}
+  \begin{description}
+    \item[Nombre]
+      \textbf{man} - interfaz de los manuales de referencia del sistema
+
+    \vspace{\baselineskip}
+    \item[Sinopsis]
+      man [opciones de man] [[sección] página ...] ... \\
+      man -K [opciones de man] [sección] term ... \\
+      man -f [opciones de whatis] página ... \\
+
+    \vspace{\baselineskip}
+    \item[Descripción]
+      man es el paginador de manuales del sistema.
+      Cada argumento de página dado a man normalmente es el nombre de un
+      programa, utilidad o función. La página de manual asociada con cada
+      uno de estos argumentos es, pues, encontrada y mostrada.
+
+    \vspace{\baselineskip}
+    \item[Ejemplos]
+      \begin{itemize}
+        \item man ls
+        \item man -K ssh
+        \item man -f scp
+      \end{itemize}
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Comando info}
+  \begin{description}
+    \item[Nombre]
+      \textbf{info} - lee los documentos Info
+
+    \vspace{\baselineskip}
+    \item[Sinopsis]
+      info [opciones] ... [menu-item ... ]
+
+    \vspace{\baselineskip}
+    \item[Descripción]
+      Lee la documentación que se encuentra en formato Info.
+
+    \vspace{\baselineskip}
+    \item[Ejemplos]
+      \begin{itemize}
+        \item info emacs
+        \item info -f ./archivo.info
+      \end{itemize}
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Comando whatis}
+  \begin{description}
+    \item[Nombre]
+      \textbf{whatis} - muestra descripciones de una línea de las páginas
+      de manual
+
+    \vspace{\baselineskip}
+    \item[Sinopsis]
+      whatis [-dlv?V] [-r|-w] [-s lista] [-m sistema[,...]] [-M ruta] [-L localización] [-C archivo] nombre ...
+    \vspace{\baselineskip}
+    \item[Descripción]
+      Cada página de manual despone de una descripción breve. whatis busca
+      nombres de página de manual y muestra las descripciones de página de
+      cualquier nombre coincidente.
+
+      El nombre puede contener comodines (-w) o puede ser una expresión
+      regular (-r). Con estas opciones puede ser necesario entrecomillar el
+      nombre o escapar (\textbackslash{}) los caracteres especiales para impedir que la
+      shell los interprete.
+
+    \vspace{\baselineskip}
+    \item[Ejemplos]
+      \begin{itemize}
+        \item whatis ls
+        \item whatis ssh
+      \end{itemize}
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Comando apropos}
+  \begin{description}
+    \item[Nombre]
+      \textbf{apropos} - busca nombres y descripciones de páginas de manual
+
+    \vspace{\baselineskip}
+    \item[Sinopsis]
+      apropos [-dalv?V] [-e|-w|-r] [-s listado] [-m sistema[,...]] [-M ruta] [-L local] [-C archivo] palabraclave ...
+
+    \vspace{\baselineskip}
+    \item[Descripción]
+      Cada página de manual contiene una breve descripción.
+      apropos busca las descripciones de las instancias de palabra clave.
+
+      Una palabraclave normalmente es una expresión regular, como si (-r)
+      fuera empleada, o quizá contenga comodines (-w), o coincida con la
+      palabra clave exacta (-e). Utilizando estas opciones, quizá sea
+      necesario entrecomillar la palabraclave o escapar (\textbackslash{})
+      los caracteres especiales para impedir que la shell los interprete.
+
+    \vspace{\baselineskip}
+    \item[Ejemplos]
+      \begin{itemize}
+        \item apropos ssh
+      \end{itemize}
+  \end{description}
+\end{frame}
+
+\section{Direccionamiento de entrada/salida}
+
+\begin{frame}[c]{Conceptos}
+  Las tres definiciones siguientes se denominan "\textbf{Flujos de archivos}".
+  Contienen información que se recibe de algún lugar o se envía a algún lugar.
+  En un sistema UNIX, la entrada del teclado (\textbf{entrada estándar}),
+  la información impresa en la pantalla (\textbf{salida estándar}) y la
+  \textbf{salida de error} (también impresa en la pantalla) se tratan como
+  flujos de archivos separados.
+\end{frame}
+
+\begin{frame}[c]{Flujos de archivos}
+  \begin{description}
+    \item[Salida estándar] 
+      La salida estándar es la salida del programa impresa en la pantalla,
+      sin incluir la salida de error (ver más abajo).
+    \pausa
+    \vspace{\baselineskip}
+    \item[Entrada estándar]
+      La entrada estándar es la entrada del usuario. Normalmente, el teclado
+      se utiliza como dispositivo de entrada estándar en un sistema UNIX.
+    \pausa
+    \vspace{\baselineskip}
+    \item[Error estándar]
+      El error estándar es la salida de error de los programas. Esta salida
+      también se envía a la pantalla y normalmente se verá mezclada con la
+      salida estándar. La diferencia entre la salida estándar y el error
+      estándar es que el error estándar no tiene búfer (aparece
+      inmediatamente en la pantalla) y el error estándar solo se imprime
+      cuando algo sale mal (le dará detalles de lo que salió mal).
+  \end{description}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Uso de los flujos de archivos}
+
+  \begin{description}
+    \item[>] 
+      El símbolo mayor que se usa para enviar información a algún lugar
+      (por ejemplo, un archivo de texto).
+      
+      \begin{lstlisting}[language=Bash]
+cat archivo1.txt archivo2.txt > archivo1_y_2.txt
+      \end{lstlisting}
+
+      Esto concatenará los archivos en un archivo grande llamado
+      "archivo1\_y\_2.txt". Tenga en cuenta que esto sobrescribirá
+      cualquier archivo existente.
+
+    \pausa
+    \vspace{\baselineskip}
+    \item[<]
+      El símbolo menor que insertará información de algún lugar (un archivo
+      de texto) como si lo hubiera escrito usted mismo. A menudo se usa con
+      comandos que están diseñados para obtener información solo de la
+      entrada estándar.
+
+      \begin{lstlisting}[language=Bash]
+tr '[AZ]' '[az]' < unArchivo.txt > archivoNuevo.txt
+      \end{lstlisting}
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Uso de los flujos de archivos}
+  \begin{description}
+    \item[>{}>] 
+      El símbolo \textbf{>{}>} agrega información al final de un archivo o
+      crea una si el archivo no existe.
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Uso de los flujos de archivos}
+  \begin{description}
+    \item[<{}<]
+      El símbolo \textbf{<{}<} a veces se usa con comandos que usan entrada
+      estándar para tomar información. Simplemente escriba \textbf{<{}<
+      palabra} (donde palabra puede ser cualquier cadena) al final del
+      comando. Sin embargo, su uso principal es en secuencias de comandos de
+      shell.
+
+      \vspace{\baselineskip}
+      El comando toma su entrada hasta que escribe "palabra",
+      lo que hace que el comando finalice y procese la entrada.
+
+      \vspace{\baselineskip}
+      Usar << es similar a usar \textbf{CTRL-D} (tecla \textbf{EOF}),
+      excepto que usa una cadena para realizar la función de fin de archivo.
+      Este diseño permite su uso en scripts de shell.
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Uso de los flujos de archivos}
+  \begin{description}
+    \item[]
+      \vspace{\baselineskip}
+      Por ejemplo, escriba "\textbf{cat}" (sin opciones...) y funcionará con
+      la entrada estándar.
+
+      \vspace{\baselineskip}
+      Para dejar de ingresar la entrada estándar, normalmente presionaría
+      \textbf{CTRL-D}.
+
+      \vspace{\baselineskip}
+      Como alternativa, puede escribir "cat <{}< TERMINADO", luego escriba lo
+      que desee.
+
+      \vspace{\baselineskip}
+      Cuando haya terminado, en lugar de presionar \textbf{CTRL-D}, puede
+      escribir "TERMINADO" y terminará (la palabra TERIMANDO no se grabará).
+  \end{description}
+\end{frame}
+
+
+\section{Gestión de usuarios}
+
+\begin{frame}[c]{....}
+  \begin{center}
+    mmmm ... y porque no mejor usamos \textbf{man}
+  \end{center}
+\end{frame}
+
+%\section{Herramientas relacionadas con el texto}
+%
+%\begin{frame}[c]{....}
+%  \begin{center}
+%    mmmm ... y porque no mejor usamos \textbf{man}
+%  \end{center}
+%\end{frame}
+%
+%\section{Comandos de red}
+%\section{Seguridad}
+%\section{Archivar archivos}
+

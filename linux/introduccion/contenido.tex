@@ -1,0 +1,426 @@
+% ex: ts=2 sw=2 sts=2 et filetype=tex
+% SPDX-License-Identifier: CC-BY-SA-4.0
+
+\section{GNU/Linux}
+
+\begin{frame}[c]{¿Qué es GNU/Linux?}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{center}
+            \includegraphics[scale=0.5]{tux.png}
+        \end{center}
+        \pausa
+        \column{0.5\textwidth}
+        \textbf{GNU/Linux} es un sistema operativo (o una familia de sistemas
+        operativos) tipo \textbf{Unix} compuesto por software libre y de código
+        abierto. GNU/Linux surge de las contribuciones de varios proyectos
+        de software, entre los cuales destacan GNU (iniciado por \emph{Richard
+        Stallman} en 1983) y el kernel \textbf{Linux} (iniciado
+        por \emph{Linus Torvalds} en 1991).
+    \end{columns}
+\end{frame}
+
+\begin{frame}[c]{¿Qué es GNU/Linux?}
+    \begin{columns}
+        \column{0.5\textwidth}
+        A pesar de que en la jerga cotidiana la mayoría de las personas usan
+        el vocablo \textbf{Linux} para referirse a este sistema operativo, en
+        realidad ese es solo el nombre del \textbf{kernel o núcleo}, ya que
+        el sistema completo está formado también por una gran cantidad de
+        componentes del proyecto GNU junto a componentes de terceros, que
+        van desde compiladores hasta entornos de escritorio.
+        \column{0.5\textwidth}
+        \begin{center}
+            \includegraphics[scale=0.5]{tux.png}
+        \end{center}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[c]{¿Qué es GNU/Linux?}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{center}
+            \includegraphics[scale=0.5]{tux.png}
+        \end{center}
+        \column{0.5\textwidth}
+        Cabe señalar que existen derivados que usan el núcleo Linux pero que
+        no tienen componentes GNU, como por ejemplo el sistema operativo
+        \textbf{Android}. También existen distribuciones de software GNU
+        donde el núcleo Linux está ausente.
+    \end{columns}
+\end{frame}
+
+\begin{frame}[c]{¿Qué es una distribución de Linux?}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{center}
+            \includegraphics[scale=0.4]{distros.png}
+        \end{center}
+        \pausa
+        \column{0.5\textwidth}
+        Una distribución (o \textbf{distro}) de Linux es una distribución
+        de software basada en
+        el núcleo Linux que incluye determinados paquetes de software para
+        satisfacer las necesidades de un grupo específico de usuarios,
+        dando así origen a ediciones domésticas, empresariales y para
+        servidores.
+    \end{columns}
+\end{frame}
+
+\begin{frame}[c]{Formatos de paquetes en Linux}
+
+  \begin{block}{Los paquetes existentes en GNU/Linux}
+    Son dependientes de la
+    \textbf{distribución} en la que se estén usando; son usados comúnmente
+    para la compresión de aplicaciones en diferentes formatos para
+    distintos medios de instalación.
+  \end{block}
+
+  \vspace{\baselineskip}
+  Estos son un conjunto de ficheros que contienen instrucciones para la
+  reconstrucción de la aplicación dentro del sistema nuevo, dentro de estos,
+  podemos encontrar, Paquetes Binarios y Paquetes de código Fuente.
+\end{frame}
+
+\begin{frame}[c]{Formatos de paquetes en Linux}
+  \begin{description}
+    \item [DEB] Contienen ejecutables, archivos de configuración,
+      páginas de información, derechos de copyright y otras documentaciones,
+      los paquetes \textbf{Debian} se colocan en archivos .deb.
+
+      Estos paquetes también son usados por distribuciones basadas en la
+      distribución Debian, algunas de estas, son: \textbf{Ubuntu, Kubuntu,
+      ZorinOS, Linux Mint}, entre otras.
+
+    \pausa
+    \item [RPM] Por sus siglas en inglés \textbf{Redhat Package Manager},
+      este tipo de empaquetado para Linux fue desarrollado para la
+      distribución de Red Hat, con el fin de crear un sistema fácil de crear
+      e instalar.
+
+      Actualmente todas las distribuciones basadas en Red Hat ocupan los
+      paquetes RPM, algunas de ellas son: \textbf{Fedora, CentOS y openSuSe},
+      entre otras.
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Formatos de paquetes en Linux}
+  \begin{description}
+    \item [TGZ] Es un archivo de paquetes específico para Unix, comprimido
+      con el compresor Gnu Zip. Es un paquete de código fuente, ocupado para
+      contener aplicaciones, y su código fuente, para no tener que crear un
+      tipo de paquete específico para cada distribución.
+
+      A diferencia de los
+      paquetes .deb, o .rpm, este no contiene instrucciones particulares de
+      instalación para cada distribución, por lo que la instalación del
+      contenido deberá ser compilado por el usuario.
+
+    \pausa
+    \item [Ebuild] Paquete usado solo por la distribución Gentoo, consiste en
+      un script bash, ejecutable solo en un entorno específico. Sus archivos,
+      deben de ser archivos de texto con la extensión .ebuild
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Formatos de paquetes en Linux}
+  \begin{description}
+    \item [Pacman] Combina un paquete binario simple, con un sistema de fácil
+      construcción. La meta de pacman es el facilitamiento de la instalación
+      de paquetes, sea que estén dentro de los repositorios oficiales de Arch,
+      o creaciones de los mismos usuarios.
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Identifica el sistema de paqueteria de cada distro}
+  \begin{center}
+    \includegraphics[scale=0.5]{distros.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}[c]{Entorno gráfico}
+  Los sistemas operativos GNU/Linux pueden funcionar tanto en
+  \textbf{entorno gráfico} como en \textbf{modo consola}, ya que el entorno
+  gráfico no va explícitamente unido al resto de programas de manejo del
+  sistema y puede usarse de forma opcional.
+
+  \vspace{\baselineskip}
+  La consola es común en distribuciones para servidores, mientras que la
+  interfaz gráfica está orientada al usuario final, tanto de hogar como
+  empresarial. Asimismo, también existen los \textbf{entornos de escritorio},
+  que son un conjunto de programas formado por \emph{gestores de ventanas},
+  iconos y muchas aplicaciones que facilitan la utilización de la
+  computadora en modo gráfico.
+
+\end{frame}
+
+\begin{frame}[c]{Entorno gráfico}
+  Los escritorios más populares en GNU/Linux son:
+
+  \begin{itemize}
+    \item GNOME
+    \item KDE Plasma
+    \item LXQt
+    \item Xfce
+    \item MATE
+    \item Cinnamon
+  \end{itemize}
+
+  Aunque existen muchos más, también puede usarse con solo los
+  \textbf{gestores de ventanas}, que son la columna vertebral de los entornos
+  de escritorio, y los encargados de dibujar la interfaz de las aplicaciones
+  y la composición.
+\end{frame}
+
+\section{Estructura de directorios}
+
+\begin{frame}[c]{Estándar de jerarquía del sistema de archivos}
+  El estándar de jerarquía del sistema de archivos (en inglés \textbf{Filesystem
+  Hierarchy Standard}, también conocido por sus siglas \textbf{FHS}) es una
+  norma que define los directorios principales y sus contenidos en el sistema
+  operativo \textbf{GNU/Linux} y otros sistemas de la \emph{familia Unix}.
+
+  \vspace{\baselineskip}
+  Se diseñó originalmente en 1994 para estandarizar el sistema de archivos de
+  las distribuciones de Linux, basándose en la tradicional organización de
+  directorios de los sistemas Unix. En 1995 se amplió el ámbito del estándar
+  a cualquier Unix que sea voluntariamente.
+\end{frame}
+
+\begin{frame}[c]{Estructura de los directorios}
+  En \textbf{UNIX} y sistemas similares como BSD, GNU/Linux, todos los
+  archivos y directorios aparecen bajo el directorio raíz, \textbf{/},
+  aun cuando se encuentren en distintos dispositivos físicos.
+
+  \vspace{\baselineskip}
+  La mayoría de estos directorios existe en todos los sistemas operativos
+  tipo UNIX, y generalmente son usados de igual forma, aunque no son
+  consideradas obligatorias por otras plataformas GNU/Linux.
+\end{frame}
+
+\begin{frame}[c]{Estructura de los directorios}
+	\begin{tikzpicture}
+	[-,thick]
+	\footnotesize
+	\node {\texttt{/}} [edge from parent fork down]
+		child {node {\texttt{bin}}}
+		child {node {\texttt{etc}}}
+		child {node {\texttt{home}}
+			child {node {\texttt{anne}}}
+			child {node {\texttt{sam}}}
+			child {node {$\dots$}}
+		}
+		child {node {\texttt{lib}}}
+		child {node {\texttt{opt}}}
+		child {node {\texttt{proc}}}
+		child {node {\texttt{tmp}}}
+		child {node {\texttt{usr}}
+			child {node {\texttt{bin}}
+				child {node {\texttt{acyclic}}}
+				child {node {\texttt{diff}}}
+				child {node {\texttt{dot}}}
+				child {node {\texttt{gc}}}
+				child {node {\texttt{neato}}}
+				child {node {$\dots$}}
+			}
+			child {node {\texttt{include}}}
+			child {node {\texttt{local}}}
+			child {node {\texttt{share}}}
+			child {node {\texttt{src}}}
+			child {node {$\dots$}}
+		}
+		child {node {$\dots$}};
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[c]{Estructura general}
+  \begin{description}
+    \item [/] La raíz del sistema de archivos. Por lo general, se puede
+			escribir, pero esto no es obligatorio.
+    \pausa
+		\item [/boot/] La partición de arranque utilizada para iniciar el sistema.
+			En los sistemas EFI, esta es posiblemente la partición del sistema EFI
+			(ESP).
+    \pausa
+		\item [/boot/efi/] Si la partición de arranque /boot/ se mantiene
+			por separado de la partición del sistema EFI (ESP), esta última se monta
+			aquí.
+    \pausa
+		\item [/etc/] Configuración específica del sistema. Este directorio puede
+			o no ser de solo lectura.
+    \pausa
+		\item [/home/] La ubicación de los directorios de inicio del usuario
+			normal. Posiblemente compartido con otros sistemas y nunca de solo
+			lectura. Este directorio solo debe ser utilizado por usuarios normales,
+			nunca por usuarios del sistema.
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Estructura general}
+  \begin{description}
+    \item [/root/] El directorio de inicio del usuario raíz. El directorio de
+			inicio del usuario raíz se encuentra fuera de /home/para asegurarse de
+			que el usuario raíz pueda iniciar sesión incluso sin /home/ estar
+			disponible y montado.
+    \pausa
+    \item [/srv/] El lugar para almacenar información/archivos útiles del
+			servidor en general, administrado por el administrador del sistema.
+			No se imponen restricciones sobre cómo se organiza internamente este
+			directorio. Generalmente se puede escribir y posiblemente se comparte
+			entre sistemas.
+    \pausa
+    \item [/tmp/] El lugar para pequeños archivos temporales. Este directorio
+			generalmente se monta como una instancia "tmpfs" y, por lo tanto, no
+			debe usarse para archivos más grandes. (Use /var/tmp/ para archivos más
+			grandes). Este directorio generalmente se vacía al arrancar. Además, los
+			archivos a los que no se accede dentro de un tiempo determinado pueden
+			eliminarse automáticamente.
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Datos de tiempo de ejecución}
+  \begin{description}
+    \item [/run/] Un sistema de archivos "tmpfs" para que los paquetes del
+			sistema coloquen datos de tiempo de ejecución, archivos de socket y
+			similares. Este directorio se vacía en el arranque y, por lo general,
+			se puede escribir solo para programas privilegiados. Siempre se
+			puede escribir.
+    \pausa
+    \item [/run/log/] Registros del sistema en tiempo de ejecución. Los
+			componentes del sistema pueden colocar registros privados en este
+			directorio. Siempre se puede escribir, incluso cuando /var/log/ es
+			posible que aún no esté accesible.
+    \pausa
+    \item [/run/user/] Contiene directorios de tiempo de ejecución por
+			usuario, cada uno de los cuales suele ser una instancia "tmpfs" montada
+			individualmente. Siempre se puede escribir, vaciado en cada reinicio y
+			cuando el usuario cierra la sesión.
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Recursos del sistema operativo proporcionados por el proveedor}
+  \begin{description}
+    \item [/usr/] Recursos del sistema operativo proporcionados por el
+			proveedor. Por lo general, es de solo lectura, pero esto no es
+			obligatorio. Posiblemente compartida entre varios hosts.
+			El administrador no debe modificar este directorio, excepto al
+			instalar o eliminar paquetes proporcionados por proveedores.
+    \pausa
+    \item [/usr/bin/] Binarios y ejecutables para comandos de usuario que
+			aparecerán en la \$PATH ruta de búsqueda. Se recomienda no colocar
+			binarios en este directorio que no sean útiles para la invocación
+			desde un shell (como los binarios de demonios); estos deben colocarse en
+			un subdirectorio de /usr/lib/ en su lugar.
+    \pausa
+    \item [/usr/include/] Archivos de encabezado de la API de C y C++ de
+      las bibliotecas del sistema.
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Recursos del sistema operativo proporcionados por el proveedor}
+  \begin{description}
+    \item [/usr/lib/] Datos estáticos de proveedores privados compatibles con
+      todas las arquitecturas (aunque no necesariamente independientes de la
+      arquitectura). Tenga en cuenta que esto incluye ejecutables internos u
+      otros archivos binarios que no se invocan regularmente desde un shell.
+      Dichos binarios pueden ser para cualquier arquitectura compatible con
+      el sistema.
+    \pausa
+    \item [/usr/lib/arch-id/] Ubicación para colocar bibliotecas dinámicas,
+      también llamada \$libdir. El identificador de arquitectura a utilizar
+      se define en la lista de especificadores de arquitectura
+      multiarquitectura (tuplas) . Las ubicaciones heredadas de \$libdir
+      son /usr/lib/, /usr/lib64/. Este directorio no debe usarse para datos
+      específicos del paquete, a menos que estos datos también dependan de la
+      arquitectura.
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Recursos del sistema operativo proporcionados por el proveedor}
+  \begin{description}
+    \item [/usr/share/] Recursos compartidos entre varios paquetes, como
+      documentación, páginas man, información de zona horaria, fuentes y otros
+      recursos. Por lo general, la ubicación precisa y el formato de los
+      archivos almacenados debajo de este directorio están sujetos a
+      especificaciones que garantizan la interoperabilidad.
+    \pausa
+    \item [/usr/share/doc/] Documentación del sistema operativo o paquetes
+      del sistema
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Datos del sistema de variables persistentes}
+  \begin{description}
+    \item [/var/] Datos persistentes y variables del sistema. Se puede escribir
+      durante el funcionamiento normal del sistema. Es posible que este
+      directorio se complete previamente con datos proporcionados por el
+      proveedor, pero las aplicaciones deberían poder reconstruir los archivos
+      y directorios necesarios en esta subjerarquía en caso de que falten, ya
+      que el sistema podría iniciarse sin que se complete este directorio.
+    \pausa
+    \item [/var/lib/] Datos persistentes del sistema. Los componentes del
+      sistema pueden colocar datos privados en este directorio
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Datos del sistema de variables persistentes}
+  \begin{description}
+    \item [/var/log/] Registros persistentes del sistema. Los componentes del
+      sistema pueden colocar registros privados en este directorio, aunque se
+      recomienda realizar la mayoría de los registros a través de las
+      llamadas \textbf{syslog}(3)  y \textbf{sd\_journal\_print}(3).
+    \pausa
+    \item [/var/tmp/] El lugar para archivos temporales más grandes y
+      persistentes. A diferencia de /tmp/, este directorio generalmente se
+      monta desde un sistema de archivos físico persistente y, por lo tanto,
+      puede aceptar archivos más grandes.
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Kernel virtual y sistemas de archivos API}
+  \begin{description}
+    \item [/dev/] El directorio raíz para los nodos de dispositivos. Por lo
+      general, este directorio se monta como una instancia "devtmpfs", pero
+      puede ser de un tipo diferente en configuraciones de espacio
+      aislado/contenedores. Este directorio es administrado conjuntamente por
+      el kernel y systemd-udevd(8) , y otros componentes no deben escribir
+      en él.
+    \pausa
+    \item [/proc/] Un sistema de archivos de kernel virtual que expone la
+      lista de procesos y otras funciones. Este sistema de archivos es
+      principalmente una API para interactuar con el kernel y no un lugar
+      donde se puedan almacenar archivos normales.
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Kernel virtual y sistemas de archivos API}
+  \begin{description}
+    \item [/proc/sys/] Una jerarquía debajo /proc/ que expone una cantidad de
+      parámetros ajustables del kernel. La forma principal de configurar los
+      ajustes en este árbol de archivos API es a través de los archivos
+      \textbf{sysctl.d}(5).
+    \pausa
+    \item [/sys/] Un sistema de archivos de kernel virtual que expone los
+      dispositivos descubiertos y otras funciones. Este sistema de archivos es
+      principalmente una API para interactuar con el kernel y no un lugar
+      donde se puedan almacenar archivos normales.
+  \end{description}
+\end{frame}
+
+\begin{frame}[c]{Enlaces simbólicos de compatibilidad}
+  \begin{description}
+    \item [/bin/]
+    \item [/sbin/]
+    \item [/usr/sbin/] Estos enlaces simbólicos de compatibilidad apuntan a
+      /usr/bin/, lo que garantiza que los scripts y los binarios que hacen
+      referencia a estas rutas heredadas encuentren correctamente sus binarios.
+    \pausa
+    \item [/lib/] Este enlace simbólico de compatibilidad apunta a
+      /usr/lib/, lo que garantiza que los programas que hacen referencia a
+      esta ruta heredada encuentren correctamente sus recursos.
+    \pausa
+    \item [/var/run/] Este enlace simbólico de compatibilidad apunta a /run/,
+      lo que garantiza que los programas que hacen referencia a esta ruta
+      heredada encuentren correctamente sus datos de tiempo de ejecución.
+  \end{description}
+\end{frame}

@@ -1,5 +1,6 @@
 % ex: ts=2 sw=2 sts=2 et filetype=tex
 % SPDX-License-Identifier: CC-BY-SA-4.0
+
 \documentclass[aspectratio=169]{beamer}
 
 \usetheme{Boadilla}
@@ -9,18 +10,19 @@
 \graphicspath{{../img/}}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
-\usepackage{graphicx} % Allows including images
+\usepackage{graphicx}
 \usepackage{listings}
 \usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{trees}
 
-\title{Secure Shell} % The short title appears at the bottom of every slide,
-                                               % the full title is only on the title page
-\author{Miguel Bernal Marin} % Your name
-\institute[Escuela] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\title[Línea de comandos de Linux]{Herramientas de la línea de comandos de GNU/Linux}
+\author{Miguel Bernal Marin}
+\institute[Escuela]
 {
- Nombre de la Institución\\% Your institution for the title page
+ Nombre de la Institución\\
 \medskip
-\textit{correo} % Your email address
+\textit{correo}
 }
 \date{
     \today
@@ -97,5 +99,10 @@
 \end{frame}
 
 \input{contenido.tex}
+
+\begin{frame}[c]{Créditos}
+  El material está basado en
+  \href{https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/GNU-Linux-Tools-Summary.html}{https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/GNU-Linux-Tools-Summary.html}
+\end{frame}
 
 \end{document}
