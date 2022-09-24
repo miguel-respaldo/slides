@@ -7,7 +7,10 @@
 
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides
 
-\graphicspath{{../../img/}}
+\graphicspath{{../../img/}{../../../styles/tecmm/}}
+% use the command "usepackage" instead of "usecolortheme" to use the path to styles
+\usepackage{../../../styles/tecmm/beamercolorthemetecmm2}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
 \usepackage{graphicx}
@@ -15,15 +18,20 @@
 
 \title{Manejo de excepciones}
 \author{Miguel Bernal Marin}
-\institute[Escuela]
+\institute[TecMM Zapopan] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
- Nombre de la Institución\\
+ Instituto Tecnológico\\
+ José Mario Molina\\
+ Pasquel y Henríquez\\% Your institution for the title page
 \medskip
-\textit{correo}
+\textit{miguel.bernal@zapopan.tecmm.edu.mx} % Your email address
 }
 \date{
     \today
 } % Date, can be changed to a custom date
+
+\logo{\includegraphics[height=1.5cm]{tecmm-logo.png}}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
 
 %New colors defined below
 \definecolor{codeBakground}{rgb}{0.95,0.95,0.92}
@@ -93,9 +101,15 @@
 
 \input{contenido.tex}
 
+{\nologo
 \begin{frame}[c]{Créditos}
+  \begin{center}
+    \includegraphics[height=3cm]{tecmm-z-logo.png}
+  \end{center}
+  \vspace{\baselineskip}
   El material está basado en
   \href{https://www.w3schools.com/python/default.asp}{https://www.w3schools.com/python/default.asp}
 \end{frame}
+}
 
 \end{document}
