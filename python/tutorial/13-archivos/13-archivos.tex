@@ -1,29 +1,37 @@
 % ex: ts=2 sw=2 sts=2 et filetype=tex
 % SPDX-License-Identifier: CC-BY-SA-4.0
+
 \documentclass[aspectratio=169]{beamer}
 
 \usetheme{Boadilla}
 
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides
 
-\graphicspath{{../../img/}}
+\graphicspath{{../../img/}{../../../styles/tecmm/}}
+% use the command "usepackage" instead of "usecolortheme" to use the path to styles
+\usepackage{../../../styles/tecmm/beamercolorthemetecmm}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
-\usepackage{graphicx} % Allows including images
+\usepackage{graphicx}
 \usepackage{listings}
 
-\title{Manipulacion de archivos} % The short title appears at the bottom of every slide,
-                                               % the full title is only on the title page
-\author{Miguel Bernal Marin} % Your name
-\institute[Escuela] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\title{Manipulacion de archivos}
+\author{Miguel Bernal Marin}
+\institute[TecMM Zapopan] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
- Nombre de la Institución\\% Your institution for the title page
+ Instituto Tecnológico\\
+ José Mario Molina\\
+ Pasquel y Henríquez\\% Your institution for the title page
 \medskip
-\textit{correo} % Your email address
+\textit{miguel.bernal@zapopan.tecmm.edu.mx} % Your email address
 }
 \date{
     \today
 } % Date, can be changed to a custom date
+
+\logo{\includegraphics[height=1.5cm]{tecmm-logo.png}}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
 
 %New colors defined below
 \definecolor{codeBakground}{rgb}{0.95,0.95,0.92}
@@ -32,7 +40,22 @@
 \definecolor{codeKeyword2}{rgb}{0.0, 0.545,0.545}
 \definecolor{codeNumbers}{rgb}{0.5,0.5,0.5}
 \definecolor{codeString}{rgb}{1.0, 0.0, 1.0}
+\definecolor{codeString2}{rgb}{0.0, 0.5, 0.0}
 \definecolor{light-gray}{gray}{0.90}
+
+% Lenguaje PSeInt
+\lstdefinelanguage{PSeInt}{
+  keywords={Algoritmo, FinAlgoritmo, Funcion, Escribir, Leer, Si, Entonces,
+  SiNo, Fin, Segun, Hacer, De, Otro, Modo, Mientras, Repetir, Hasta, Que,
+  Para, Hasta, Con, Paso},
+  sensitive=False,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  alsoletter={<>=-:;},
+  alsodigit={-}
+}
 
 %Code listing style named "mystyle"
 \lstdefinestyle{mystyle}{
@@ -58,11 +81,57 @@
   literate=%
   {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
   {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
-  {¡}{{!`}}1 {¿}{{?`}}1
+  {¡}{{!`}}1  {¿}{{?`}}1
+  {ñ}{{\~n}}1 {Ñ}{{\~N}}1
+}
+
+\lstdefinestyle{pseudocodigo} {%
+  backgroundcolor=\color{light-gray},
+  basicstyle={\footnotesize\ttfamily},
+  numberstyle=\tiny\color{codeNumbers},
+  xleftmargin={0.2cm},
+  numbersep=5pt,
+  numbers=left,
+  stepnumber=1,
+  firstnumber=1,
+  numberfirstline=true,
+  % Code design
+  identifierstyle=\color{black},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{red}\bfseries,
+  stringstyle=\color{codeString2}\ttfamily,
+  commentstyle=\color{codeNumbers}\ttfamily,
+  % Code
+  language=PSeInt,
+  alsodigit={.:;},
+  tabsize=2,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  extendedchars=true,
+  breaklines=true,
+  % Español
+  literate=%
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {¡}{{!`}}1  {¿}{{?`}}1
+  {ñ}{{\~n}}1 {Ñ}{{\~N}}1
 }
 
 %"mystyle" code listing set
 \lstset{style=mystyle}
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the
+%beginning of each section and highlights the current section:
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Contenido}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+%------------------------------------------------------------
 
 \newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
 %\newcommand{\pausa}{}      % Para que NO salgan las pausas
@@ -80,9 +149,15 @@
 
 \input{contenido.tex}
 
+{\nologo
 \begin{frame}[c]{Créditos}
+  \begin{center}
+    \includegraphics[height=3cm]{tecmm-z-logo.png}
+  \end{center}
+  \vspace{\baselineskip}
   El material está basado en
   \href{https://www.w3schools.com/python/default.asp}{https://www.w3schools.com/python/default.asp}
 \end{frame}
+}
 
 \end{document}
