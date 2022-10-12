@@ -7,7 +7,10 @@
 
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides
 
-\graphicspath{{../img/}}
+\graphicspath{{../img/}{../../styles/itesm/}}
+% use the command "usepackage" instead of "usecolortheme" to use the path to styles
+\usepackage{../../styles/itesm/beamercolorthemeitesm}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
 \usepackage{graphicx}
@@ -18,15 +21,24 @@
 
 \title[Línea de comandos de Linux]{Herramientas de la línea de comandos de GNU/Linux}
 \author{Miguel Bernal Marin}
-\institute[Escuela]
+\institute[Tec de Monterrey]
 {
- Nombre de la Institución\\
+Instituto Tecnológico y de\\
+Estudios Superiores de Monterrey,\\
+Campus Guadalajara\\
 \medskip
-\textit{correo}
+\textit{miguel.bernal.marin@tec.mx}
 }
 \date{
     \today
 } % Date, can be changed to a custom date
+
+\logo{\includegraphics[height=1.5cm]{logoTEC.png}}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
+
+\titlegraphic{
+    \includegraphics[width=4cm]{logoTEC_full.png}
+}
 
 %New colors defined below
 \definecolor{codeNumbers}{rgb}{0.5,0.5,0.5}
@@ -89,9 +101,12 @@
 
 \begin{document}
 
+{
+\nologo
 \begin{frame}
     \titlepage
 \end{frame}
+}
 
 \begin{frame}
     \frametitle{Contenido}
@@ -99,10 +114,5 @@
 \end{frame}
 
 \input{contenido.tex}
-
-\begin{frame}[c]{Créditos}
-  El material está basado en
-  \href{https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/GNU-Linux-Tools-Summary.html}{https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/GNU-Linux-Tools-Summary.html}
-\end{frame}
 
 \end{document}
