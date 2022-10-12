@@ -8,12 +8,7 @@
 
 \graphicspath{{../img/}{../../styles/itesm/}}
 % use the command "usepackage" instead of "usecolortheme" to use the path to styles
-%\usepackage{../../styles/itesm/beamercolorthemeitesm}
-
-
-
-
-
+\usepackage{../../styles/itesm/beamercolorthemeitesm}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
@@ -26,15 +21,24 @@
 \title{Introducción a Linux} % The short title appears at the bottom of every slide,
                                                % the full title is only on the title page
 \author{Miguel Bernal Marin} % Your name
-\institute[Escuela] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\institute[Tec de Monterrey] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
- Nombre de la Institución\\% Your institution for the title page
+Instituto Tecnológico y de\\
+Estudios Superiores de Monterrey,\\
+Campus Guadalajara\\
 \medskip
-\textit{correo} % Your email address
+\textit{miguel.bernal.marin@tec.mx}
 }
 \date{
     \today
 } % Date, can be changed to a custom date
+
+\logo{\includegraphics[height=1.5cm]{logoTEC.png}}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
+
+\titlegraphic{
+    \includegraphics[width=4cm]{logoTEC_full.png}
+}
 
 %New colors defined below
 \definecolor{codeNumbers}{rgb}{0.5,0.5,0.5}
@@ -97,9 +101,12 @@
 
 \begin{document}
 
+{
+\nologo
 \begin{frame}
     \titlepage
 \end{frame}
+}
 
 \begin{frame}
     \frametitle{Contenido}
