@@ -1,20 +1,5 @@
 % ex: ts=2 sw=2 sts=2 et filetype=tex
 % SPDX-License-Identifier: CC-BY-SA-4.0
-\documentclass[aspectratio=169]{beamer}
-
-\usetheme{Boadilla}
-
-\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides
-
-\graphicspath{{../../img/}}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
-\usepackage{graphicx} % Allows including images
-\usepackage{listings}
-
-\title{Titulo} % The short title appears at the bottom of every slide,
-                                               % the full title is only on the title page
-\input{../../common/author}
 
 %New colors defined below
 \definecolor{codeBakground}{rgb}{0.95,0.95,0.92}
@@ -27,6 +12,7 @@
 
 %Code listing style named "mystyle"
 \lstdefinestyle{mystyle}{
+  % General design
   backgroundcolor=\color{codeBakground},
   commentstyle=\color{codeComment},
   keywordstyle=\color{codeKeyword},
@@ -44,26 +30,15 @@
   showstringspaces=false,
   showtabs=false,
   upquote=true,                      % requires textcomp
-  tabsize=2
+  tabsize=2,
+  % Español
+  literate=%
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {¡}{{!`}}1  {¿}{{?`}}1
+  {ñ}{{\~n}}1 {Ñ}{{\~N}}1
 }
 
 %"mystyle" code listing set
 \lstset{style=mystyle}
 
-\newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
-%\newcommand{\pausa}{}      % Para que NO salgan las pausas
-
-\begin{document}
-
-\begin{frame}
-    \titlepage
-\end{frame}
-
-\begin{frame}
-    \frametitle{Contenido}
-    \tableofcontents
-\end{frame}
-
-\input{contenido.tex}
-
-\end{document}
