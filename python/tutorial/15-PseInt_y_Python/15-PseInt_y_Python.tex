@@ -1,5 +1,6 @@
 % ex: ts=2 sw=2 sts=2 et filetype=tex
 % SPDX-License-Identifier: CC-BY-SA-4.0
+
 \documentclass[aspectratio=169]{beamer}
 
 \usetheme{Boadilla}
@@ -9,16 +10,27 @@
 \graphicspath{{../../img/}}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
-\usepackage{graphicx} % Allows including images
+\usepackage{graphicx}
 \usepackage{listings}
 
-\title{Estructuras selectivas} % The short title appears at the bottom of every slide,
-                                               % the full title is only on the title page
-\input{../../../common/estilonivel3}
+\title{Traduciendo PseInt a Python}
+
 \input{../../../common/author}
 \input{../../../common/date}
 \input{../../../common/lstPython}
 \input{../../../common/lstPseInt}
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the
+%beginning of each section and highlights the current section:
+%\AtBeginSection[]
+%{
+%  \begin{frame}
+%    \frametitle{Contenido}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+%}
+%------------------------------------------------------------
 
 \newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
 \newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
@@ -39,10 +51,5 @@
 \end{frame}
 
 \input{contenido.tex}
-
-\begin{frame}[c]{Créditos}
-  El material está basado en
-  \href{https://www.w3schools.com/python/default.asp}{https://www.w3schools.com/python/default.asp}
-\end{frame}
 
 \end{document}
