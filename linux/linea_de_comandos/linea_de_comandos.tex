@@ -20,18 +20,10 @@
 \usetikzlibrary{trees}
 
 \title[Línea de comandos de Linux]{Herramientas de la línea de comandos de GNU/Linux}
-\author{Miguel Bernal Marin}
-\institute[Tec de Monterrey]
-{
-Instituto Tecnológico y de\\
-Estudios Superiores de Monterrey,\\
-Campus Guadalajara\\
-\medskip
-\textit{miguel.bernal.marin@tec.mx}
-}
-\date{
-    \today
-} % Date, can be changed to a custom date
+
+\input{../../common/author}
+\input{../../common/date}
+\input{../../common/lstGris}
 
 \logo{\includegraphics[height=1.5cm]{logoTEC.png}}
 \newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
@@ -39,50 +31,6 @@ Campus Guadalajara\\
 \titlegraphic{
     \includegraphics[width=4cm]{logoTEC_full.png}
 }
-
-%New colors defined below
-\definecolor{codeNumbers}{rgb}{0.5,0.5,0.5}
-\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
-\definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
-\definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
-\definecolor{brown}{rgb}{0.69,0.31,0.31}
-
-%Code listing style named "mystyle"
-\lstdefinestyle{mystyle}{
-  % General design
-  backgroundcolor=\color{editorGray},
-  basicstyle={\ttfamily},
-  numberstyle=\tiny\color{codeNumbers},
-  xleftmargin={0.2cm},
-  numbersep=5pt,
-  numbers=left,
-  stepnumber=1,
-  firstnumber=1,
-  numberfirstline=true,
-  % Code design
-  identifierstyle=\color{black},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywordstyle=\color{editorGreen}\bfseries,
-  stringstyle=\color{editorOcher}\ttfamily,
-  commentstyle=\color{brown}\ttfamily,
-  % Code
-  alsodigit={.:;},
-  tabsize=2,
-  showtabs=false,
-  showspaces=false,
-  showstringspaces=false,
-  extendedchars=true,
-  breaklines=true,
-  % Español
-  literate=%
-  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
-  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
-  {¡}{{!`}}1  {¿}{{?`}}1
-  {ñ}{{\~n}}1 {Ñ}{{\~N}}1
-}
-
-%"mystyle" code listing set
-\lstset{style=mystyle}
 
 %------------------------------------------------------------
 %The next block of commands puts the table of contents at the
@@ -96,6 +44,7 @@ Campus Guadalajara\\
 }
 %------------------------------------------------------------
 
+\newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
 \newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
 %\newcommand{\pausa}{}      % Para que NO salgan las pausas
 
@@ -114,5 +63,14 @@ Campus Guadalajara\\
 \end{frame}
 
 \input{contenido.tex}
+
+\begin{frame}[c]{Créditos}
+  El material está basado en
+  \begin{itemize}
+    \item \href{https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/GNU-Linux-Tools-Summary.html}{https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/GNU-Linux-Tools-Summary.html}
+    \item \href{https://www.hostinger.mx/tutoriales/linux-comandos}{https://www.hostinger.mx/tutoriales/linux-comandos}
+    \item \href{https://manpages.debian.org/testing/manpages-es/index.html}{https://manpages.debian.org/testing/manpages-es/index.html}
+  \end{itemize}
+\end{frame}
 
 \end{document}
