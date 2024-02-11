@@ -5,31 +5,33 @@
 
 \usetheme{Boadilla}
 
-\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides
+\setbeamertemplate{navigation symbols}{}
 
-\graphicspath{{../../img/}}
+\graphicspath{{../img/}}
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc} %% https://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
+\usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{listings}
+%\usepackage{listings}
+%\usepackage{colortbl}
+\usepackage{tikz}
+%\usetikzlibrary{trees}
 
-\title{Manejo de excepciones}
+\title[Linux containers]{Introducción a los Contenedores}
 
-\input{../../../common/estilonivel3}
-\input{../../../common/author}
-\input{../../../common/date}
-\input{../../../common/lstPython}
+\input{../../common/author}
+\input{../../common/date}
+%\input{../../common/lstGris}
 
 %------------------------------------------------------------
 %The next block of commands puts the table of contents at the
 %beginning of each section and highlights the current section:
-%\AtBeginSection[]
-%{
-%  \begin{frame}
-%    \frametitle{Contenido}
-%    \tableofcontents[currentsection]
-%  \end{frame}
-%}
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Contenido}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
 %------------------------------------------------------------
 
 \newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
@@ -51,10 +53,5 @@
 \end{frame}
 
 \input{contenido.tex}
-
-\begin{frame}[c]{Créditos}
-  El material está basado en
-  \href{https://www.w3schools.com/python/default.asp}{https://www.w3schools.com/python/default.asp}
-\end{frame}
 
 \end{document}
