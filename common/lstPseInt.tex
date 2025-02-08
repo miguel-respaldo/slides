@@ -18,6 +18,7 @@
 }
 
 \lstdefinestyle{pseudocodigo} {%
+  % General design
   backgroundcolor=\color{light-gray},
   basicstyle={\footnotesize\ttfamily},
   numberstyle=\tiny\color{codeNumbers},
@@ -30,7 +31,7 @@
   % Code design
   identifierstyle=\color{black},
   keywordstyle=\color{blue}\bfseries,
-  ndkeywordstyle=\color{red}\bfseries,
+  keywordstyle={[2]\color{red}\ttfamily},
   stringstyle=\color{codeString2}\ttfamily,
   commentstyle=\color{codeNumbers}\ttfamily,
   % Code
@@ -42,6 +43,10 @@
   showstringspaces=false,
   extendedchars=true,
   breaklines=true,
+  breakatwhitespace=false,
+  captionpos=b,
+  keepspaces=true,
+  upquote=true,                      % requires textcomp
   % Español
   literate=%
   {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
