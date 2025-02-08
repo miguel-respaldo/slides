@@ -1,0 +1,1 @@
+convert -background transparent tsj_jalisco512.png -define icon:auto-resize=16,32,96,256 favicon.ico
