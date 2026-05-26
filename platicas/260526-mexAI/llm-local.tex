@@ -1,0 +1,81 @@
+% ex: ts=2 sw=2 sts=2 et filetype=tex
+% SPDX-License-Identifier: CC-BY-SA-4.0
+
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Boadilla}
+\usecolortheme{whale}
+
+\setbeamertemplate{navigation symbols}{}
+
+\graphicspath{{../img/}}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\title[LLM Local]{Ejecutando localmente LLM en
+tu computadora personal}
+
+\author[\textcircled{cc} BY-SA 4.0]{Miguel Bernal Marin}
+
+\institute[MexAI Community]
+{
+MexAI Community \\
+\medskip
+\textit{\href{mailto:miguel.bernal.marin@gmail.com}{miguel.bernal.marin@gmail.com}}\\
+Telegram: \textit{\href{https://t.me/miguelinux}{@miguelinux}}
+}
+\date{
+  26 de mayo de 2026
+}
+
+\input{../../common/lstGris}
+\lstset{language=Bash}
+
+\logo{\includegraphics[height=2cm]{mexia.png}}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Contenido}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+%------------------------------------------------------------
+
+\newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
+\newcommand{\pausa}{\pause} % Para usar una pausa en las presentaciones
+%\newcommand{\pausa}{}      % Para que NO salgan las pausas
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\input{../common/about-me.tex}
+
+\begin{frame}
+    \frametitle{Contenido}
+    \tableofcontents
+\end{frame}
+
+\input{../../ia/llm-local/contenido.tex}
+
+\begin{frame}{Agradecimientos}
+
+  \begin{center}
+    \huge ¡Gracias!
+  \end{center}
+
+  El código fuente de esta presentación la puedes encontrar en
+  \begin{itemize}
+    \item \href{https://github.com/miguelinux/slides}
+      {https://github.com/miguelinux/slides}
+      \{platicas/260526-mexAI/\}
+
+  \end{itemize}
+\end{frame}
+
+\end{document}
