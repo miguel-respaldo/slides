@@ -1,0 +1,257 @@
+% ex: ts=2 sw=2 sts=2 et filetype=tex
+% SPDX-License-Identifier: CC-BY-SA-4.0
+
+\section{Nombre y correo}
+
+\begin{frame}[c]{Antes de comenzar ...}
+  \begin{itemize}
+    \item Si estas en \textbf{Windows} utiliza el programa de \textbf{Git
+          Bash}
+    \pausa
+    \item Si estas en \textbf{Mac OS}  o \textbf{Linux} abre una terminal de
+          sistema.
+    \pausa
+    \item ¿Dónde se ejecutan estos comandos?
+    \pausa
+      \begin{itemize}
+        \item Los comandos se ejecuten dentro del directorio que contiene el
+              \textbf{repositorio}
+      \end{itemize}
+    \pausa
+    \item ¿Cómo sé que es el directorio del repositorio?
+    \pausa
+      \begin{itemize}
+        \item El directorio del repositorio contiene un directorio llamado
+              \textbf{.git}
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Comandos básicos de linea de comandos}
+  \begin{lstlisting}[language=Bash]
+ls
+  \end{lstlisting}
+  Lista los archivos contenidos en el directorio/carpeta actual
+  \pausa
+  \begin{lstlisting}[language=Bash]
+pwd
+  \end{lstlisting}
+  Muestra la ruta completa del directorio actual
+  \pausa
+  \begin{lstlisting}[language=Bash]
+cd DESTINO
+  \end{lstlisting}
+  Se cambia al directorio DESTINO
+  \pausa
+  \begin{lstlisting}[language=Bash]
+mkdir CARPETA
+  \end{lstlisting}
+  Crea el directorio llamado CARPETA
+  \pausa
+  \begin{lstlisting}[language=Bash]
+cat UN_ARCHIVO
+  \end{lstlisting}
+  Muestra el contenido en pantalla de UN\_ARCHIVO
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Configurando tu nombre en Git}
+  \begin{lstlisting}
+git config user.name
+  \end{lstlisting}
+  Muestra el nombre configurado
+  \pausa
+  \begin{lstlisting}
+git config --global user.name "Nombre Completo"
+  \end{lstlisting}
+  Asigna el nombre
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Configurando tu correo electrónico en Git}
+  \begin{lstlisting}
+git config user.email
+  \end{lstlisting}
+  Muestra el correo electrónico configurado
+  \pausa
+  \begin{lstlisting}
+git config --global user.email usuario@servidor.com
+  \end{lstlisting}
+  Asigna el correo electrónico
+\end{frame}
+
+\section{Editor de texto}
+
+\begin{frame}[fragile]
+  \frametitle{Configurando el editor de texto en Git}
+  El editor de texto sirve para crear los "\textbf{commits}".
+  Por default \emph{git} utiliza el editor \textbf{vim}
+  \pausa
+  \begin{lstlisting}
+git config core.editor
+  \end{lstlisting}
+  Muestra el editor configurado
+  \pausa
+  \begin{lstlisting}
+git config --global core.editor EDITOR
+  \end{lstlisting}
+  Asigna el editor de texto a usar
+  \begin{itemize}
+    \item En \textbf{Windows} el EDITOR puede ser \textbf{notepad}
+    \item En \textbf{Mac OS} y en \textbf{Linux} el EDITOR puede
+          ser \textbf{nano}
+  \end{itemize}
+\end{frame}
+
+\section{Llaves SSH en GitHub}
+
+\begin{frame}[c]{¿Qué son las llaves SSH?}
+  \begin{itemize}
+    \item Las llaves SSH se utilizan para autentificarse en un servidor
+          remoto.
+    \pausa
+    \item \textbf{Github} las utiliza para autentificarse en su servidor
+          y poder actualizar el contenido de un repositorio.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Llave/Clave privada y pública}
+
+  Para generar una nueva llave privada y pública se hace con el siguiente
+  comando
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Bash]
+ssh-keygen -t ed25519 -C "un comentario o tu correo"
+  \end{lstlisting}
+  \vspace{\baselineskip}
+  Y para fines escolares le dan \textbf{3 veces} la tecla \textbf{Enter}
+  
+  \begin{alertblock}{Nota:}
+    Si vas a usar un sistema "viejo" que no soporte el algoritmo Ed25519 usa
+    el siguiente comando:
+
+    \begin{lstlisting}[language=Bash]
+ssh-keygen -t rsa -b 4096 -C "un comentario o tu correo"
+    \end{lstlisting}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Creando una llave privada y pública}
+  {\small
+  \begin{verbatim}
+$ ssh-keygen -t ed25519 -C "tu@correo.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/linux/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /ruta/de/llave.key
+Your public key has been saved in /ruta/de/llave.key.pub
+The key fingerprint is:
+SHA256:wORH6Q1UOYYglYKThePgoUjZX5OL+3zp5eX8H61kMhQ tu@correo.com
+The key's randomart image is:
++--[ED25519 256]--+
+|  o=o.++++..     |
+|.+*..=.=+ +      |
+|=o.o..*.++ .E    |
+|o..  o +. .  .   |
+|       o oo += ..|
+|$       o. . oo.o|
++----[SHA256]-----+
+  \end{verbatim}
+  }
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Llave privada}
+
+  Una llave privada se ve como sigue:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Bash,basicstyle={\footnotesize\ttfamily}]
+$ cat id_ed25519
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABBy+jTsNn
+RGbVHm4+tj17iXAAAAEAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAICyF8SypKpKQ3RM+
+sj/f1spMXDDZw8/0Jr6Y6jkqz4wRAAAAsIbtjd3GW8mJ7/rnh2c3uuoaO0MdvQVqNg62Sn
+Gm81ev+7Le8glK4Cm3TszQb7tbMKyhttlvMoj6ar2r6hTATSVHlZWCOs6mcA6YZWFuy5rN
+2EQULumaIOe/mbd8MTY7vFyHRT09fsf02lya3z78T04sz/4/KWtre5/q7n5avaswl/axZv
+z82f93E1bsE+8GCEWKzlnO5ZzryRCApWpC6jvrqR7StONAo8Ju2O3Py+Hi
+-----END OPENSSH PRIVATE KEY-----
+$
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Llave pública}
+
+  Una llave pública se ve como sigue:
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}[language=Bash,basicstyle={\footnotesize\ttfamily}]
+$ cat id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZI1NTEAICpKQ3RM+sj/f1spZw8/0J6kqz4wR tu@correo.com
+$
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Configuración en GitHub}
+  \begin{itemize}
+    \item En \textbf{Windows} abran un nuevo \textbf{Git Bash}.
+    \item En \textbf{Mac OS} y \textbf{Linux} abran una nueva terminal.
+    \pausa
+    \item Ingresen al directorio \textbf{.ssh}
+  \begin{lstlisting}
+cd .ssh
+  \end{lstlisting}
+    \pausa
+    \item Muestren el contendido de la llave pública
+  \begin{lstlisting}
+cat id_ed25519.pub
+  \end{lstlisting}
+    \pausa
+    \item Copia el contenido de la llave pública
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Configuración en GitHub}
+  \begin{itemize}
+    \item Ingresa a:
+    \href{https://github.com/settings/keys}{https://github.com/settings/keys}
+    \pausa
+    \begin{itemize}
+      \item Dale click al botón verde que dice \textbf{New SSH key}
+      \pausa
+      \item Dale un nombre/titulo a esta nueva llave (\textbf{Title})
+      \pausa
+      \item Copia el contenido de la llave pública en el recuadro
+            \textbf{Key}
+      \pausa
+      \item Finalmente dale click al botón verde que dice \textbf{Add SSH
+            key}
+      \item Ingresa tu clave si es necesario.
+    \end{itemize}
+ \end{itemize}
+\end{frame}
+
+\section{Usando SSH con git push}
+
+\begin{frame}[fragile]
+  \frametitle{Repositorios remotos en git}
+  \begin{itemize}
+    \item Si un repositorio fue descargado ("\emph{clonado}"),
+      entonces tiene un repositorio \textbf{remoto}.
+    \pausa
+  \item Para ver los repositorios \textbf{remotos} se usa el comando:
+  \end{itemize}
+
+  \begin{lstlisting}[language=Bash]
+ls
+  \end{lstlisting}
+  \pausa
+
+\end{frame}

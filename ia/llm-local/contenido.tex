@@ -1,0 +1,259 @@
+% ex: ts=2 sw=2 sts=2 et filetype=tex
+% SPDX-License-Identifier: CC-BY-SA-4.0
+
+\section{Modelos extenso de Lenguaje}
+
+\begin{frame}[c]{¿Qué es un LLM?}
+  \pausa
+  \begin{itemize}
+    \item LLM son las siglas en inglés de \textbf{Large Language Model}
+      (Gran Modelo de Lenguaje).
+    \pausa
+    \item En términos sencillos: es un programa de inteligencia
+      artificial diseñado para \textbf{entender}, \textbf{procesar} y
+      \textbf{generar texto} de una manera que suena completamente humana.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{¿Cómo funcionan (en cristiano)?}
+  No son bases de datos que \emph{buscan respuestas en Google}, ni son
+  "\textbf{conscientes}". Un LLM es, en el fondo, un predictor de palabras
+  extremadamente avanzado.
+  \pausa
+  \begin{enumerate}
+    \item \textbf{El entrenamiento}: Leyeron miles de millones de textos en
+          internet (libros, artículos, código de programación, conversaciones).
+    \pausa
+    \item \textbf{El superpoder}: Gracias a eso, aprendieron la estructura del
+          lenguaje, la gramática, los contextos y hasta el sentido del humor.
+    \pausa
+    \item \textbf{La ejecución}: Cuando tú le escribes un mensaje (un prompt),
+         el modelo calcula matemáticamente cuál es la siguiente
+         palabra más lógica que debería seguir a tu texto, y luego la
+         siguiente, y la siguiente, hasta formar una respuesta completa.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[c]{¿Cómo funcionan (en cristiano)?}
+ \begin{columns}
+   \column{0.5\textwidth}
+     \begin{exampleblock}{Analogía}
+      Un LLM es como el autocorrector o texto predictivo de tu teléfono
+      celular, pero con esteroides, que ha leído toda la biblioteca de la
+      humanidad y puede programar, escribir poesía o resumir contratos.
+     \end{exampleblock}
+   \column{0.5\textwidth}
+     \pausa
+     \begin{center}
+       \includegraphics[height=7cm]{autocorrector.jpg}
+     \end{center}
+ \end{columns}
+\end{frame}
+
+\begin{frame}[c]{¿Por qué la gente quiere correrlos en "Local"?}
+  Tradicionalmente, para usar un LLM (como ChatGPT, Claude o Gemini en la
+  nube), tu texto viaja por internet a los servidores gigantes de empresas
+  como OpenAI o Google.
+\end{frame}
+
+\begin{frame}[c]{¿Por qué la gente quiere correrlos en "Local"?}
+  Llevarlo a "Local" significa descargar ese "\textbf{cerebro}" a tu propia
+  computadora para que funcione:
+  \pausa
+  \begin{itemize}
+    \item \textbf{Sin internet}: Funciona aunque estés en medio del bosque.
+    \pausa
+    \item \textbf{Privacidad 100\%}: Tus datos corporativos o privados
+      nunca salen de tu máquina.
+    \pausa
+    \item \textbf{Gratis e ilimitado}: No pagas suscripciones ni tarifas
+      por cada pregunta que haces.
+  \end{itemize}
+\end{frame}
+
+\section{Conceptos básicos}
+
+\begin{frame}[c]{Cuantización (Quantization)}
+ \begin{columns}
+   \column{0.35\textwidth}
+  Es el proceso de \textbf{reducir el tamaño de un modelo} cambiando la
+  precisión con la que se guardan sus pesos numéricos.
+
+  \pausa
+  \vspace{\baselineskip}
+  \textbf{Cómo funciona}: Los modelos originales suelen entrenarse
+   en precisión alta (como FP16, de 16 bits). La cuantización reduce esto
+   a 8 bits, 4 bits o incluso menos.
+   \column{0.65\textwidth}
+    \includegraphics[height=6cm]{datatype.png}
+ \end{columns}
+\end{frame}
+
+\begin{frame}[c]{Cuantización (Quantization)}
+  \begin{exampleblock}{Analogía}
+    Es como pasar una película de resolución 4K a 1080p. Pierdes un poquito
+    de detalle casi imperceptible, pero el archivo pesa una fracción de lo
+    original y corre en cualquier lado.
+  \end{exampleblock}
+
+  \vspace{\baselineskip}
+  \textbf{Por qué importa en local}: Permite que un modelo que antes
+  requería una tarjeta gráfica industrial de \$10,000 USD ahora
+  quepa en la memoria RAM o VRAM de una laptop comercial.
+\end{frame}
+
+\begin{frame}[c]{Formatos de Archivo: GGUF vs. EXL2 / Safetensors}
+  Cuando descargas un modelo para uso local (generalmente de Hugging Face
+  \href{https://huggingface.co/}{https://huggingface.co/}),
+  te vas a topar con estas extensiones:
+  \begin{center}
+    \includegraphics[height=6cm]{huggingface.jpg}
+  \end{center}
+\end{frame}
+
+\begin{frame}[c]{Formatos de Archivo: GGUF vs. EXL2 / Safetensors}
+  \begin{itemize}
+    \item \textbf{GGUF (GPT-Generated Unified Format)}: Diseñado por la
+      comunidad de \textbf{llama.cpp}. Es el rey de la ejecución local en
+      computadoras de consumo porque permite "\textbf{vaciado de capas}"
+      (CPU/GPU offloading).
+
+      \vspace{\baselineskip}
+      Si el modelo no cabe entero en tu tarjeta gráfica (VRAM), GGUF divide
+      el trabajo y manda el resto a la memoria RAM normal y al procesador
+      (CPU).
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Formatos de Archivo: GGUF vs. EXL2 / Safetensors}
+  \begin{itemize}
+    \item \textbf{Safetensors / EXL2}: Son formatos optimizados casi
+      exclusivamente para \textbf{GPU}. Son increíblemente rápidos (mucha
+      mayor velocidad de tokens por segundo), pero si el modelo no cabe por
+      completo en la memoria de tu tarjeta gráfica, simplemente no va a
+      correr o dará error.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Context Window (Ventana de Contexto)}
+  Es la cantidad máxima de texto (medida en tokens) que el modelo puede
+  "leer" y "recordar" en una sola sesión de chat.
+  \pausa
+  \begin{itemize}
+    \item \textbf{El error común}: La gente piensa que la ventana de
+      contexto es el almacenamiento del modelo. No, es su memoria de trabajo
+      a corto plazo.
+    \pausa
+    \item \textbf{Impacto en local}: A mayor ventana de contexto (por
+      ejemplo, pasar de 8k a 32k tokens), más memoria RAM/VRAM
+      consume el modelo mientras responde. Un modelo puede caber en
+      tu memoria estando apagado, pero puede congelar tu PC si le pides que
+      lea un libro entero de golpe.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Inferencia (Inference)}
+  \begin{block}{Definición:}
+    Es simplemente el acto de \textbf{ejecutar el modelo para que genere una
+    respuesta}. Cuando tú le haces una pregunta y el LLM empieza a escribir
+    palabra por palabra, estás haciendo inferencia. (A diferencia del
+    entrenamiento, donde el modelo apenas está aprendiendo).
+  \end{block}
+\end{frame}
+
+\begin{frame}[c]{Parámetros (en miles de millones o "B")}
+ \begin{columns}
+  \column{0.4\textwidth}
+    \includegraphics[height=4cm]{maestra.png}
+  \column{0.6\textwidth}
+  \begin{tabular}{|r|c|c|}
+        \hline
+        Cantidad & Español & Inglés \\
+        \hline
+        100 & cien &
+        \pausa
+        hundred  \\
+        1,000 & mil &
+        \pausa
+        thousand \\
+        1,000,000 & millón &
+        \pausa 
+        million  \\
+        1,000,000,000 & mil millones &
+        \pausa 
+        \textbf{\textcolor{red}{billion}}  \\
+        1,000,000,000,000 & billón &
+        \pausa 
+        trillion \\
+        \hline
+    \end{tabular}
+ \end{columns}
+\end{frame}
+
+\begin{frame}[c]{Parámetros (en miles de millones o "B")}
+  Es el indicador del "\textbf{tamaño del cerebro}" del modelo. Verás modelos
+  marcados como 8B, 14B, 70B (Billion en inglés).
+
+  \pausa
+  \vspace{\baselineskip}
+  \begin{itemize}
+    \item \textbf{¿Qué son?}: Los parámetros son las conexiones
+      internas (las neuronas artificiales) que el modelo ajustó durante
+      su entrenamiento.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Parámetros (en miles de millones o "B")}
+  \begin{itemize}
+    \item \textbf{Regla de oro local}: Más parámetros significan respuestas
+      más inteligentes y complejas, pero también exigen muchísima más
+      memoria para ejecutarse. Un modelo de 8B cuantizado a 4 bits necesita
+      unos 6-8 GB de RAM libres; uno de 70B necesita hardware profesional o
+      configuraciones multi-GPU.
+  \end{itemize}
+\end{frame}
+
+\section{El ecosistema}
+
+\begin{frame}[c]{Ollama}
+ \begin{center}
+  \includegraphics[height=3cm]{ollama.png}
+ \end{center}
+ La herramienta más popular para principiantes. Funciona en la terminal
+  (estilo Docker) y automatiza la descarga y configuración.
+  \begin{itemize}
+    \item \href{https://ollama.com/}{https://ollama.com/}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{LM Studio / AnythingLLM}
+  Interfaces gráficas (GUI) hermosas para quienes no quieren tocar la
+  terminal y prefieren una experiencia tipo ChatGPT pero 100\% local.
+  \begin{itemize}
+    \item \href{https://lmstudio.ai/}{https://lmstudio.ai/}
+    \item \href{https://anythingllm.com/}{https://anythingllm.com/}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Ya basta de teoría...}
+ \begin{columns}
+  \column{0.5\textwidth}
+   \begin{center}
+    \includegraphics[height=4cm]{abrahamsimpson.jpg}
+   \end{center}
+  \column{0.5\textwidth}
+   Queremos ver correr la LLM local
+ \end{columns}
+\end{frame}
+
+%\begin{frame}[c]{Titulo}
+%  texto
+%\end{frame}
+
+%\begin{frame}[fragile]
+%  \frametitle{Comandos básicos de linea de comandos}
+%  \begin{lstlisting}[language=Bash]
+%ls
+%  \end{lstlisting}
+%\end{frame}
