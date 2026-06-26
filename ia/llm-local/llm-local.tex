@@ -4,11 +4,9 @@
 \documentclass[aspectratio=169]{beamer}
 
 \usetheme{Boadilla}
-\usecolortheme{whale}
 
 \setbeamertemplate{navigation symbols}{}
 
-\graphicspath{{../img/}{../../ia/img/}}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -17,12 +15,14 @@
 \title[LLM Local]{Ejecutando localmente LLM en
 tu computadora personal}
 
+\input{../../common/estilonivel2}
 \input{../../common/author}
-\input{../../common/date}
+%\input{../../common/date}
+\date{26 de junio de 2026}
+
 \input{../../common/lstGris}
 
 \lstset{language=Bash}
-
 
 \AtBeginSection[]
 {
@@ -39,9 +39,12 @@ tu computadora personal}
 
 \begin{document}
 
+{
+\nologo
 \begin{frame}
     \titlepage
 \end{frame}
+}
 
 \begin{frame}
     \frametitle{Contenido}
